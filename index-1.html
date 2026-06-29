@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1A3A6B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dèmè Dèmè">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(r => console.log('SW OK', r.scope));
+      });
+    }
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dèmè Dèmè</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue-dark: #1A3A6B; --blue-mid: #2563EB; --blue-light: #DBEAFE;
+    --blue-pale: #EFF6FF; --white: #FFFFFF; --gray-100: #F1F5F9;
+    --gray-300: #CBD5E1; --gray-500: #64748B; --gray-700: #334155;
+    --gold: #F59E0B; --green: #10B981; --red: #EF4444;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.10); --shadow-md: 0 4px 16px rgba(26,58,107,.13);
+    --shadow-lg: 0 8px 32px rgba(26,58,107,.18); --radius: 16px; --radius-sm: 10px;
+  }
+  body {
+    font-family: 'Inter', sans-serif; background: #E8F0FE;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 32px 16px 60px; min-height: 100vh;
+  }
+  h1.page-title { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 8px; letter-spacing: .5px; text-align: center; }
+  .page-sub { font-size: .82rem; color: var(--gray-500); margin-bottom: 28px; text-align: center; }
+
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 28px; }
+  .tab { padding: 8px 16px; border-radius: 50px; border: 2px solid var(--blue-mid); background: var(--white); color: var(--blue-mid); font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .78rem; cursor: pointer; transition: all .2s; }
+  .tab.active, .tab:hover { background: var(--blue-mid); color: var(--white); }
+
+  .phone { width: 375px; min-height: 780px; background: var(--white); border-radius: 44px; box-shadow: var(--shadow-lg), 0 0 0 8px var(--blue-dark); overflow: hidden; position: relative; display: flex; flex-direction: column; }
+  .status-bar { background: var(--blue-dark); color: var(--white); display: flex; justify-content: space-between; align-items: center; padding: 10px 24px 6px; font-size: .7rem; font-weight: 600; flex-shrink: 0; }
+
+  .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; }
+  .screen.active { display: flex; }
+  .scroll-y { overflow-y: auto; flex: 1; }
+
+  /* Boutons communs */
+  .btn-blue { padding: 14px; background: var(--blue-mid); color: var(--white); border: none; border-radius: 50px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; cursor: pointer; transition: background .2s, transform .15s; width: 100%; }
+  .btn-blue:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .btn-white { padding: 13px; background: var(--white); color: var(--blue-dark); border: none; border-radius: 50px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; cursor: pointer; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,.15); transition: transform .15s; }
+  .btn-white:hover { transform: translateY(-2px); }
+  .btn-ghost { padding: 13px; background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.6); border-radius: 50px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .95rem; cursor: pointer; width: 100%; transition: background .2s; }
+  .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+  .back-btn { background: rgba(255,255,255,.2); border: none; color: var(--white); width: 36px; height: 36px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  .section-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem; color: var(--blue-dark); margin-bottom: 10px; }
+  .divider { height: 1px; background: var(--gray-300); margin: 4px 0; }
+
+  .bottom-nav { display: flex; justify-content: space-around; background: var(--white); border-top: 1px solid var(--gray-300); padding: 10px 0 16px; flex-shrink: 0; }
+  .nav-item { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: .62rem; font-weight: 600; color: var(--gray-500); cursor: pointer; transition: color .2s; padding: 0 10px; }
+  .nav-item.active { color: var(--blue-mid); }
+  .nav-item .nav-icon { font-size: 1.3rem; }
+
+  /* ════ ÉCRAN 1 : SPLASH ════ */
+  #splash {
+    background: linear-gradient(160deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+    align-items: center; justify-content: center; gap: 18px; padding: 40px 28px;
+  }
+  .logo-ring { width: 96px; height: 96px; border-radius: 50%; background: rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255,255,255,.4); }
+  .logo-ring span { font-size: 2.6rem; }
+  .logo-text { font-family: 'Nunito', sans-serif; font-size: 2rem; font-weight: 900; color: var(--white); letter-spacing: 1px; text-align: center; }
+  .logo-text small { display: block; font-size: .8rem; font-weight: 600; opacity: .75; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+  .splash-tagline { font-size: .9rem; color: rgba(255,255,255,.8); text-align: center; line-height: 1.5; }
+
+  /* ════ ÉCRAN 2 : INSCRIPTION ════ */
+  #inscription { background: var(--white); flex: 1; overflow-y: auto; }
+  .insc-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); padding: 24px 24px 32px; color: var(--white); flex-shrink: 0; }
+  .insc-header h2 { font-family: 'Nunito', sans-serif; font-size: 1.4rem; font-weight: 800; }
+  .insc-header p { font-size: .83rem; opacity: .8; margin-top: 4px; }
+  .badge-500 { display: inline-flex; align-items: center; gap: 6px; background: var(--gold); color: #7C2D12; font-weight: 800; font-size: .8rem; padding: 5px 12px; border-radius: 50px; margin-top: 10px; }
+
+  /* Méthodes de connexion sociales */
+  .social-methods { display: flex; flex-direction: column; gap: 10px; padding: 20px 20px 0; }
+  .social-btn { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1.5px solid var(--gray-300); border-radius: var(--radius-sm); background: var(--white); cursor: pointer; font-size: .88rem; font-weight: 600; color: var(--gray-700); transition: border-color .2s, box-shadow .2s; width: 100%; }
+  .social-btn:hover { border-color: var(--blue-mid); box-shadow: var(--shadow-sm); }
+  .social-btn .s-logo { width: 24px; height: 24px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .google-logo { background: #fff; border: 1px solid #ddd; }
+  .facebook-logo { background: #1877F2; color: white; }
+  .social-divider { display: flex; align-items: center; gap: 10px; padding: 4px 20px; }
+  .social-divider span { font-size: .78rem; color: var(--gray-500); white-space: nowrap; }
+  .social-divider::before, .social-divider::after { content: ''; flex: 1; height: 1px; background: var(--gray-300); }
+
+  /* Onglets Email / Téléphone */
+  .method-tabs { display: flex; background: var(--gray-100); border-radius: var(--radius-sm); padding: 4px; margin: 0 20px; }
+  .method-tab { flex: 1; padding: 8px; text-align: center; border-radius: 8px; font-size: .82rem; font-weight: 700; cursor: pointer; color: var(--gray-500); transition: all .2s; border: none; background: transparent; }
+  .method-tab.active { background: var(--white); color: var(--blue-mid); box-shadow: var(--shadow-sm); }
+
+  .form-body { padding: 16px 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+  .form-group label { display: block; font-size: .78rem; font-weight: 600; color: var(--gray-700); margin-bottom: 5px; }
+  .form-group input, .form-group select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--gray-300); border-radius: var(--radius-sm); font-size: .9rem; color: var(--gray-700); outline: none; transition: border-color .2s; font-family: 'Inter', sans-serif; }
+  .form-group input:focus, .form-group select:focus { border-color: var(--blue-mid); }
+
+  /* Moyens de paiement */
+  .pay-section { background: var(--blue-pale); border: 1.5px solid var(--blue-light); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .pay-section-title { font-weight: 700; font-size: .85rem; color: var(--blue-dark); margin-bottom: 2px; }
+  .pay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pay-method { display: flex; align-items: center; gap: 8px; background: var(--white); border: 2px solid var(--gray-300); border-radius: var(--radius-sm); padding: 9px 10px; cursor: pointer; font-size: .78rem; font-weight: 600; color: var(--gray-700); transition: all .2s; }
+  .pay-method.selected { border-color: var(--blue-mid); background: var(--blue-pale); color: var(--blue-dark); }
+  .pay-method .pm-logo { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .85rem; flex-shrink: 0; font-weight: 800; overflow: hidden; }
+  .pay-method .pm-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+  .pm-orange { background: #FF6B00; color: white; font-size: .6rem; }
+  .pm-moov { background: #0066CC; color: white; font-size: .6rem; }
+
+  /* ════ ÉCRAN 9 : PROFIL ════ */
+  #profil { background: var(--gray-100); }
+  .profil-hero { background: linear-gradient(160deg, var(--blue-dark) 0%, var(--blue-mid) 100%); padding: 28px 20px 50px; color: white; text-align: center; flex-shrink: 0; position: relative; }
+  .profil-avatar { width: 72px; height: 72px; border-radius: 50%; background: #DBEAFE; border: 3px solid white; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 10px; box-shadow: 0 4px 14px rgba(0,0,0,.2); }
+  .profil-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; }
+  .profil-meta { font-size: .75rem; opacity: .8; margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .profil-badge { background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.3); border-radius: 50px; padding: 3px 10px; font-size: .68rem; font-weight: 700; }
+  .profil-stats { display: flex; justify-content: center; gap: 24px; margin-top: 14px; }
+  .profil-stat { text-align: center; }
+  .profil-stat .ps-val { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.15rem; }
+  .profil-stat .ps-label { font-size: .62rem; opacity: .75; margin-top: 1px; }
+
+  .profil-card { background: white; border-radius: var(--radius-sm); margin: -22px 14px 0; padding: 14px; box-shadow: var(--shadow-md); display: flex; justify-content: space-around; flex-shrink: 0; }
+  .pc-item { display: flex; flex-direction: column; align-items: center; gap: 3px; cursor: pointer; }
+  .pc-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .pc-label { font-size: .65rem; font-weight: 700; color: var(--gray-600); }
+
+  .profil-section { margin: 12px 14px 0; }
+  .profil-section-title { font-size: .72rem; font-weight: 800; color: var(--gray-500); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; padding-left: 2px; }
+  .profil-list { background: white; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .profil-row { display: flex; align-items: center; gap: 12px; padding: 13px 14px; border-bottom: 1px solid var(--gray-100); cursor: pointer; transition: background .15s; }
+  .profil-row:last-child { border-bottom: none; }
+  .profil-row:hover { background: var(--blue-pale); }
+  .pr-icon { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .pr-text { flex: 1; }
+  .pr-label { font-size: .84rem; font-weight: 600; color: var(--gray-700); }
+  .pr-sub { font-size: .7rem; color: var(--gray-500); margin-top: 1px; }
+  .pr-arrow { color: var(--gray-300); font-size: .85rem; }
+  .pr-toggle { width: 38px; height: 22px; background: var(--blue-mid); border-radius: 50px; position: relative; cursor: pointer; flex-shrink: 0; transition: background .2s; }
+  .pr-toggle::after { content:''; position: absolute; top: 3px; right: 3px; width: 16px; height: 16px; border-radius: 50%; background: white; transition: right .2s; }
+  .pr-toggle.off { background: var(--gray-300); }
+  .pr-toggle.off::after { right: auto; left: 3px; }
+  .pr-badge { font-size: .68rem; font-weight: 700; padding: 2px 8px; border-radius: 50px; }
+  .verified-badge { background: #D1FAE5; color: #065F46; }
+  .pending-badge { background: #FEF3C7; color: #92400E; }
+
+  /* ════ ÉCRAN 10 : MESSAGERIE ════ */
+  #chat { background: var(--gray-100); display: flex; flex-direction: column; }
+  .chat-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 14px; display: flex; align-items: center; gap: 10px; flex-shrink: 0; box-shadow: var(--shadow-sm); }
+  .chat-avatar { width: 40px; height: 40px; border-radius: 50%; background: #DBEAFE; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; position: relative; }
+  .chat-online-dot { position: absolute; bottom: 1px; right: 1px; width: 10px; height: 10px; border-radius: 50%; background: var(--green); border: 2px solid white; }
+  .chat-header-info { flex: 1; }
+  .chat-header-name { font-weight: 800; font-size: .9rem; color: var(--blue-dark); }
+  .chat-header-status { font-size: .68rem; color: var(--green); font-weight: 600; }
+  .chat-header-actions { display: flex; gap: 8px; }
+  .chat-action-btn { width: 34px; height: 34px; border-radius: 50%; border: none; background: var(--blue-pale); cursor: pointer; font-size: .95rem; display: flex; align-items: center; justify-content: center; }
+
+  .chat-task-banner { background: linear-gradient(90deg, var(--blue-pale), #EDE9FE); border-bottom: 1px solid var(--gray-200); padding: 8px 14px; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .chat-task-banner .ctb-icon { font-size: 1rem; }
+  .chat-task-banner .ctb-text { font-size: .72rem; color: var(--blue-dark); font-weight: 600; flex: 1; }
+  .chat-task-banner .ctb-status { font-size: .65rem; font-weight: 700; background: #FEF3C7; color: #92400E; padding: 2px 8px; border-radius: 50px; }
+
+  .chat-messages { flex: 1; overflow-y: auto; padding: 14px 12px; display: flex; flex-direction: column; gap: 10px; }
+  .msg-row { display: flex; gap: 8px; align-items: flex-end; }
+  .msg-row.mine { flex-direction: row-reverse; }
+  .msg-bubble { max-width: 72%; padding: 9px 12px; border-radius: 16px; font-size: .8rem; line-height: 1.5; position: relative; }
+  .msg-bubble.theirs { background: white; color: var(--gray-700); border-bottom-left-radius: 4px; box-shadow: var(--shadow-sm); }
+  .msg-bubble.mine { background: var(--blue-mid); color: white; border-bottom-right-radius: 4px; }
+  .msg-time { font-size: .6rem; opacity: .6; margin-top: 3px; display: block; }
+  .msg-time.mine { text-align: right; }
+  .msg-avatar-sm { width: 26px; height: 26px; border-radius: 50%; background: #DBEAFE; display: flex; align-items: center; justify-content: center; font-size: .75rem; flex-shrink: 0; }
+  .msg-status { font-size: .62rem; opacity: .7; margin-top: 1px; text-align: right; }
+
+  .chat-suggestions { padding: 6px 12px; display: flex; gap: 6px; overflow-x: auto; flex-shrink: 0; }
+  .chat-suggestions::-webkit-scrollbar { display: none; }
+  .suggest-chip { background: var(--blue-pale); border: 1px solid #BFDBFE; border-radius: 50px; padding: 5px 12px; font-size: .7rem; color: var(--blue-mid); font-weight: 700; cursor: pointer; white-space: nowrap; transition: all .15s; flex-shrink: 0; }
+  .suggest-chip:hover { background: var(--blue-mid); color: white; }
+
+  .chat-input-bar { background: white; border-top: 1px solid var(--gray-200); padding: 10px 12px; display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+  .chat-input { flex: 1; border: 1.5px solid var(--gray-200); border-radius: 50px; padding: 8px 14px; font-size: .82rem; font-family: 'Inter', sans-serif; outline: none; color: var(--gray-700); transition: border-color .2s; }
+  .chat-input:focus { border-color: var(--blue-mid); }
+  .chat-send-btn { width: 38px; height: 38px; border-radius: 50%; background: var(--blue-mid); border: none; color: white; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .15s, transform .1s; }
+  .chat-send-btn:hover { background: var(--blue-dark); transform: scale(1.05); }
+  .msg-day-divider { text-align: center; font-size: .65rem; color: var(--gray-400); background: var(--gray-100); padding: 2px 10px; border-radius: 50px; align-self: center; }
+
+  /* ════ ÉCRAN 11 : NOTIFICATIONS ════ */
+  #notifs { background: var(--gray-100); }
+  .notifs-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; box-shadow: var(--shadow-sm); }
+  .notifs-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.05rem; color: var(--blue-dark); }
+  .notifs-mark-all { font-size: .72rem; font-weight: 700; color: var(--blue-mid); cursor: pointer; }
+  .notifs-badge { background: var(--red); color: white; font-size: .6rem; font-weight: 800; padding: 1px 6px; border-radius: 50px; margin-left: 6px; }
+
+  .notif-group-label { font-size: .68rem; font-weight: 800; color: var(--gray-500); text-transform: uppercase; letter-spacing: .05em; padding: 12px 14px 4px; }
+
+  .notif-item { display: flex; gap: 11px; align-items: flex-start; padding: 12px 14px; background: var(--white); border-bottom: 1px solid var(--gray-100); cursor: pointer; transition: background .15s; position: relative; }
+  .notif-item:hover { background: var(--blue-pale); }
+  .notif-item.unread { background: #EFF6FF; }
+  .notif-item.unread::before { content:''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--blue-mid); border-radius: 0 2px 2px 0; }
+  .notif-icon-wrap { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .notif-body { flex: 1; min-width: 0; }
+  .notif-text { font-size: .8rem; color: var(--gray-700); line-height: 1.45; }
+  .notif-text strong { color: var(--blue-dark); }
+  .notif-time { font-size: .65rem; color: var(--gray-400); margin-top: 3px; }
+  .notif-unread-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue-mid); flex-shrink: 0; margin-top: 6px; }
+
+  .notifs-empty { text-align: center; padding: 40px 20px; color: var(--gray-400); }
+  .notifs-empty .ne-icon { font-size: 2.5rem; margin-bottom: 8px; }
+  .notifs-empty .ne-text { font-size: .82rem; }
+  .pay-method.full-width { grid-column: span 2; }
+
+  /* ════ ÉCRAN 3 : APP CLIENT ════ */
+  #accueil { background: var(--gray-100); }
+  .home-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); padding: 18px 20px 24px; color: var(--white); flex-shrink: 0; }
+  .home-header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .greeting { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1.1rem; }
+  .greeting small { font-size: .75rem; font-weight: 500; opacity: .8; display: block; margin-top: 2px; }
+  .notif-btn { background: rgba(255,255,255,.15); border: none; border-radius: 50%; width: 38px; height: 38px; color: var(--white); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative; }
+  .notif-dot { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+  .search-bar { display: flex; align-items: center; gap: 8px; background: var(--white); border-radius: 50px; padding: 10px 16px; }
+  .search-bar input { border: none; outline: none; flex: 1; font-size: .88rem; color: var(--gray-700); font-family: 'Inter', sans-serif; background: transparent; }
+
+  .home-body { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+  .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .cat-item { background: var(--white); border-radius: var(--radius-sm); padding: 12px 6px; display: flex; flex-direction: column; align-items: center; gap: 5px; box-shadow: var(--shadow-sm); cursor: pointer; transition: transform .2s, box-shadow .2s; border: 2px solid transparent; }
+  .cat-item:hover, .cat-item.active { border-color: var(--blue-mid); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .cat-icon { font-size: 1.5rem; }
+  .cat-label { font-size: .62rem; font-weight: 700; color: var(--gray-700); text-align: center; line-height: 1.2; }
+
+  .presta-card { background: var(--white); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow-sm); display: flex; gap: 12px; align-items: center; cursor: pointer; transition: box-shadow .2s, transform .2s; border: 2px solid transparent; }
+  .presta-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--blue-light); }
+  .avatar { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+  .presta-info { flex: 1; min-width: 0; }
+  .presta-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem; color: var(--blue-dark); }
+  .presta-service { font-size: .78rem; color: var(--gray-500); margin: 2px 0; }
+  .presta-meta { display: flex; gap: 6px; align-items: center; margin-top: 4px; flex-wrap: wrap; }
+  .stars { color: var(--gold); font-size: .78rem; }
+  .badge { font-size: .65rem; font-weight: 700; padding: 2px 8px; border-radius: 50px; }
+  .badge-green { background: #D1FAE5; color: #065F46; }
+  .badge-blue { background: var(--blue-light); color: var(--blue-dark); }
+  .presta-price { font-family: 'Nunito', sans-serif; font-weight: 800; color: var(--blue-mid); font-size: .88rem; text-align: right; flex-shrink: 0; }
+  .presta-price small { display: block; font-size: .62rem; color: var(--gray-500); font-weight: 500; }
+
+  /* ════ ÉCRAN 4 : DÉTAIL PRESTATAIRE ════ */
+  #detail { background: var(--white); }
+  .detail-scroll { flex: 1; overflow-y: auto; display: flex; flex-direction: column; }
+  .detail-hero { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); padding: 20px 20px 28px; color: var(--white); display: flex; flex-direction: column; align-items: center; gap: 8px; position: relative; flex-shrink: 0; }
+  .detail-back { position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,.2); border: none; border-radius: 50%; width: 36px; height: 36px; color: var(--white); cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; }
+  .detail-avatar { width: 80px; height: 80px; border-radius: 50%; background: rgba(255,255,255,.2); display: flex; align-items: center; justify-content: center; font-size: 2.4rem; border: 3px solid rgba(255,255,255,.5); }
+  .detail-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.3rem; }
+  .detail-tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
+  .detail-tag { background: rgba(255,255,255,.2); font-size: .7rem; padding: 3px 10px; border-radius: 50px; }
+  .detail-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+
+  .detail-body { padding: 18px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+  .info-row { display: flex; gap: 10px; }
+  .info-box { flex: 1; background: var(--blue-pale); border-radius: var(--radius-sm); padding: 12px; text-align: center; }
+  .info-box .val { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--blue-dark); }
+  .info-box .lbl { font-size: .68rem; color: var(--gray-500); margin-top: 2px; }
+
+  .services-list { display: flex; flex-direction: column; gap: 8px; }
+  .service-item { display: flex; justify-content: space-between; align-items: center; background: var(--gray-100); border-radius: var(--radius-sm); padding: 11px 14px; }
+  .service-item .s-name { font-weight: 600; font-size: .85rem; color: var(--gray-700); }
+  .service-item .s-price { font-family: 'Nunito', sans-serif; font-weight: 800; color: var(--blue-mid); font-size: .9rem; }
+
+  .avis-card { background: var(--gray-100); border-radius: var(--radius-sm); padding: 12px; }
+  .avis-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+  .avis-auteur { font-weight: 700; font-size: .82rem; color: var(--gray-700); }
+  .avis-stars { color: var(--gold); font-size: .75rem; }
+  .avis-texte { font-size: .78rem; color: var(--gray-500); line-height: 1.5; }
+
+  .btn-book { padding: 14px; background: var(--blue-mid); color: var(--white); border: none; border-radius: 50px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 14px rgba(37,99,235,.35); transition: background .2s, transform .15s; width: 100%; }
+  .btn-book:hover { background: var(--blue-dark); transform: translateY(-2px); }
+
+  /* ════ ÉCRAN 5 : APP PRESTATAIRE ════ */
+  #presta-home { background: var(--gray-100); }
+  .presta-header { background: linear-gradient(135deg, #1A3A6B, #1e40af); padding: 18px 20px 24px; color: var(--white); flex-shrink: 0; }
+  .presta-header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .presta-greeting { font-family: 'Nunito', sans-serif; }
+  .presta-greeting .sub { font-size: .72rem; opacity: .7; }
+  .presta-greeting .name { font-weight: 900; font-size: 1.2rem; margin-top: 2px; }
+  .earnings-card { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: var(--radius); padding: 14px; }
+  .earnings-card .e-label { font-size: .72rem; opacity: .8; margin-bottom: 3px; }
+  .earnings-card .e-amount { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.6rem; }
+  .earnings-card .e-sub { font-size: .68rem; opacity: .65; margin-top: 2px; }
+  .earnings-meta { display: flex; gap: 8px; margin-top: 10px; }
+  .e-meta-item { flex: 1; background: rgba(255,255,255,.12); border-radius: 8px; padding: 7px 8px; text-align: center; }
+  .e-meta-item .v { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem; }
+  .e-meta-item .l { font-size: .62rem; opacity: .75; margin-top: 1px; }
+
+  .presta-body-scroll { padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+  .toggle-status { display: flex; align-items: center; justify-content: space-between; background: var(--white); border-radius: var(--radius-sm); padding: 14px 16px; box-shadow: var(--shadow-sm); }
+  .toggle-label { font-weight: 700; font-size: .88rem; color: var(--gray-700); }
+  .toggle-label small { display: block; font-size: .7rem; color: var(--gray-500); font-weight: 400; margin-top: 2px; }
+  .toggle-switch { width: 48px; height: 26px; border-radius: 50px; background: var(--green); position: relative; cursor: pointer; transition: background .2s; flex-shrink: 0; }
+  .toggle-switch::after { content: ''; position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--white); transition: right .2s, left .2s; }
+  .toggle-switch.off { background: var(--gray-300); }
+  .toggle-switch.off::after { right: auto; left: 3px; }
+
+  .tache-card { background: var(--white); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--blue-mid); }
+  .tache-card.encours { border-left-color: var(--green); }
+  .tache-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; gap: 8px; }
+  .tache-type { font-family: 'Nunito', sans-serif; font-weight: 800; color: var(--blue-dark); font-size: .92rem; }
+  .tache-statut { font-size: .68rem; font-weight: 700; padding: 3px 9px; border-radius: 50px; white-space: nowrap; }
+  .statut-attente { background: #FEF3C7; color: #92400E; }
+  .statut-encours { background: #D1FAE5; color: #065F46; }
+  .tache-client { font-size: .78rem; color: var(--gray-500); margin-bottom: 8px; }
+  .tache-finance { display: flex; justify-content: space-between; align-items: center; }
+  .tache-price { font-family: 'Nunito', sans-serif; font-weight: 900; color: var(--blue-mid); font-size: 1rem; }
+  .tache-net { font-size: .72rem; color: var(--green); font-weight: 600; margin-top: 1px; }
+  .tache-duree { font-size: .75rem; color: var(--gray-500); text-align: right; }
+  .tache-actions { display: flex; gap: 8px; margin-top: 10px; }
+  .btn-accept { flex: 1; padding: 9px; background: var(--green); color: var(--white); border: none; border-radius: 50px; font-weight: 700; font-size: .82rem; cursor: pointer; font-family: 'Nunito', sans-serif; }
+  .btn-refuse { flex: 1; padding: 9px; background: var(--gray-100); color: var(--gray-700); border: none; border-radius: 50px; font-weight: 700; font-size: .82rem; cursor: pointer; font-family: 'Nunito', sans-serif; }
+
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-box { background: var(--white); border-radius: var(--radius-sm); padding: 14px; box-shadow: var(--shadow-sm); }
+  .stat-box .s-val { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.3rem; color: var(--blue-dark); }
+  .stat-box .s-lbl { font-size: .72rem; color: var(--gray-500); margin-top: 3px; }
+  .stat-box .s-icon { font-size: 1.4rem; margin-bottom: 6px; }
+
+  /* ════ ÉCRAN 6 : CONFIRMATION ════ */
+  #confirmation { background: var(--white); align-items: center; justify-content: center; padding: 32px 24px; gap: 14px; text-align: center; }
+  .confirm-icon { font-size: 4rem; animation: pop .4s ease; }
+  @keyframes pop { 0% { transform: scale(0); } 80% { transform: scale(1.1); } 100% { transform: scale(1); } }
+  .confirm-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--blue-dark); }
+  .confirm-sub { font-size: .85rem; color: var(--gray-500); line-height: 1.6; }
+  .confirm-detail { background: var(--blue-pale); border-radius: var(--radius); padding: 16px; width: 100%; border: 1px solid var(--blue-light); }
+  .confirm-row { display: flex; justify-content: space-between; font-size: .84rem; padding: 5px 0; }
+  .confirm-row .k { color: var(--gray-500); }
+  .confirm-row .v { font-weight: 700; color: var(--blue-dark); }
+  .confirm-sep { border: none; border-top: 1px solid var(--blue-light); margin: 6px 0; }
+  .btn-outline-blue { padding: 13px; background: transparent; color: var(--blue-mid); border: 2px solid var(--blue-mid); border-radius: 50px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .95rem; cursor: pointer; width: 100%; }
+
+  /* ════ VÉRIFICATION D'IDENTITÉ ════ */
+  .identity-section { background: #FFF7ED; border: 1.5px solid #FED7AA; border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .identity-title { font-weight: 800; font-size: .85rem; color: #92400E; display: flex; align-items: center; gap: 6px; }
+  .id-uploads { display: flex; flex-direction: column; gap: 8px; }
+  .id-upload-item { display: flex; align-items: center; gap: 10px; background: var(--white); border: 1.5px dashed #F97316; border-radius: 8px; padding: 10px 12px; cursor: pointer; transition: all .2s; }
+  .id-upload-item:hover { border-color: #EA580C; background: #FFF7ED; }
+  .id-upload-item.done { border-color: var(--green); border-style: solid; background: #F0FDF4; }
+  .id-upload-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .id-upload-text { flex: 1; }
+  .id-upload-text .id-label { font-size: .78rem; font-weight: 700; color: #92400E; }
+  .id-upload-text .id-sub { font-size: .68rem; color: var(--gray-500); margin-top: 1px; }
+  .id-upload-item.done .id-label { color: #065F46; }
+  .id-status { font-size: 1rem; flex-shrink: 0; }
+  .identity-notice { display: flex; align-items: center; gap: 6px; font-size: .7rem; color: #92400E; background: #FFEDD5; border-radius: 6px; padding: 7px 10px; }
+
+  /* ════ SYSTÈME DE NOTATION ════ */
+  .rating-global { background: var(--blue-pale); border-radius: var(--radius-sm); padding: 14px; display: flex; gap: 14px; align-items: center; }
+  .rating-score { text-align: center; flex-shrink: 0; }
+  .rating-score .big-note { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 2.4rem; color: var(--blue-dark); line-height: 1; }
+  .rating-score .big-stars { color: var(--gold); font-size: .9rem; }
+  .rating-score .big-count { font-size: .65rem; color: var(--gray-500); margin-top: 2px; }
+  .rating-bars { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .rating-bar-row { display: flex; align-items: center; gap: 6px; }
+  .rating-bar-row .bar-label { font-size: .68rem; color: var(--gray-500); width: 16px; text-align: right; flex-shrink: 0; }
+  .rating-bar-row .bar-track { flex: 1; height: 5px; background: var(--gray-300); border-radius: 50px; overflow: hidden; }
+  .rating-bar-row .bar-fill { height: 100%; background: var(--gold); border-radius: 50px; transition: width .5s ease; }
+  .rating-bar-row .bar-count { font-size: .65rem; color: var(--gray-500); width: 14px; flex-shrink: 0; }
+
+  .avis-date { font-size: .65rem; color: var(--gray-400, #94A3B8); }
+  .avis-service-badge { display: inline-block; font-size: .62rem; background: var(--blue-light); color: var(--blue-dark); padding: 1px 7px; border-radius: 50px; margin-top: 4px; font-weight: 600; }
+
+  .rating-form { background: var(--gray-100); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .rating-form-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .88rem; color: var(--blue-dark); }
+  .stars-input { display: flex; gap: 6px; justify-content: center; padding: 4px 0; }
+  .star-btn { font-size: 1.8rem; cursor: pointer; transition: transform .15s; line-height: 1; color: var(--gray-300); }
+  .star-btn.lit { color: var(--gold); }
+  .star-btn:hover { transform: scale(1.2); }
+  .star-label { text-align: center; font-size: .78rem; font-weight: 700; color: var(--blue-mid); min-height: 18px; }
+  .rating-textarea { width: 100%; border: 1.5px solid var(--gray-300); border-radius: var(--radius-sm); padding: 10px 12px; font-size: .82rem; font-family: 'Inter', sans-serif; color: var(--gray-700); resize: none; outline: none; transition: border-color .2s; }
+  .rating-textarea:focus { border-color: var(--blue-mid); }
+  .rating-success { display: none; background: #D1FAE5; border: 1.5px solid #6EE7B7; border-radius: var(--radius-sm); padding: 12px; text-align: center; font-weight: 700; color: #065F46; font-size: .85rem; }
+
+  /* ════ ÉCRAN 7 : HISTORIQUE GAINS ════ */
+  #gains { background: var(--gray-100); }
+  .gains-header { background: linear-gradient(135deg, #1A3A6B, #1e40af); padding: 18px 20px 24px; color: var(--white); flex-shrink: 0; }
+  .gains-header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .gains-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.15rem; }
+  .gains-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .gains-sum-box { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.2); border-radius: 10px; padding: 11px 12px; }
+  .gains-sum-box .gsb-label { font-size: .68rem; opacity: .75; margin-bottom: 3px; }
+  .gains-sum-box .gsb-val { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.05rem; }
+  .gains-sum-box.full { grid-column: span 2; background: rgba(255,255,255,.22); }
+
+  .gains-filter { display: flex; gap: 6px; padding: 12px 14px 4px; overflow-x: auto; flex-shrink: 0; }
+  .gains-filter::-webkit-scrollbar { display: none; }
+  .gf-btn { padding: 6px 14px; border-radius: 50px; border: 1.5px solid var(--gray-300); background: var(--white); color: var(--gray-700); font-size: .72rem; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: 'Nunito', sans-serif; transition: all .2s; }
+  .gf-btn.active { background: var(--blue-mid); color: var(--white); border-color: var(--blue-mid); }
+
+  .gains-list { padding: 8px 14px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .gain-card { background: var(--white); border-radius: var(--radius-sm); padding: 13px 14px; box-shadow: var(--shadow-sm); display: flex; gap: 12px; align-items: flex-start; }
+  .gain-icon { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .gain-icon.verse { background: #D1FAE5; }
+  .gain-icon.attente { background: #FEF3C7; }
+  .gain-info { flex: 1; min-width: 0; }
+  .gain-service { font-weight: 700; font-size: .84rem; color: var(--gray-700); }
+  .gain-client { font-size: .72rem; color: var(--gray-500); margin-top: 1px; }
+  .gain-date { font-size: .68rem; color: var(--gray-400,#94A3B8); margin-top: 3px; }
+  .gain-escrow { font-size: .68rem; color: var(--gray-500); margin-top: 4px; display: flex; align-items: center; gap: 4px; }
+  .gain-amounts { text-align: right; flex-shrink: 0; }
+  .gain-brut { font-size: .72rem; color: var(--gray-500); text-decoration: line-through; }
+  .gain-comm { font-size: .68rem; color: var(--red); }
+  .gain-net { font-family: 'Nunito', sans-serif; font-weight: 900; color: var(--blue-dark); font-size: .95rem; }
+  .gain-statut { font-size: .65rem; font-weight: 700; padding: 2px 8px; border-radius: 50px; margin-top: 3px; display: inline-block; }
+  .gs-verse { background: #D1FAE5; color: #065F46; }
+  .gs-attente { background: #FEF3C7; color: #92400E; }
+  .gs-escrow { background: #EDE9FE; color: #5B21B6; }
+
+  .gains-cta { margin: 0 14px 14px; background: linear-gradient(135deg,#065F46,#10B981); border-radius: var(--radius-sm); padding: 14px; color: white; display: flex; justify-content: space-between; align-items: center; }
+  .gains-cta .cta-text { font-size: .78rem; font-weight: 600; line-height: 1.5; }
+  .gains-cta .cta-btn { background: white; color: #065F46; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .72rem; padding: 7px 12px; border-radius: 50px; border: none; cursor: pointer; white-space: nowrap; }
+
+  /* ════ ÉCRAN 8 : SUIVI TÂCHE ════ */
+  #suivi { background: var(--gray-100); }
+  .suivi-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); padding: 16px 20px 18px; color: var(--white); flex-shrink: 0; }
+  .suivi-header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .suivi-header-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.1rem; }
+  .suivi-header-sub { font-size: .72rem; opacity: .8; margin-top: 2px; }
+  .suivi-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3); border-radius: 50px; padding: 5px 12px; font-size: .75rem; font-weight: 700; }
+  .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #86EFAC; animation: pulse 1.5s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+
+  /* Carte simulée */
+  .map-area { position: relative; height: 180px; background: #e8f4e8; overflow: hidden; flex-shrink: 0; }
+  .map-bg { width: 100%; height: 100%; background:
+    linear-gradient(rgba(200,230,200,.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,230,200,.4) 1px, transparent 1px),
+    #D4EDDA; background-size: 28px 28px; }
+  .map-road-h { position: absolute; height: 10px; background: #B0BEC5; border-radius: 2px; }
+  .map-road-v { position: absolute; width: 10px; background: #B0BEC5; border-radius: 2px; }
+  .map-road-h.r1 { top: 60px; left: 0; right: 0; }
+  .map-road-h.r2 { top: 120px; left: 0; right: 0; }
+  .map-road-v.v1 { left: 90px; top: 0; bottom: 0; }
+  .map-road-v.v2 { left: 220px; top: 0; bottom: 0; }
+  .map-pin { position: absolute; display: flex; flex-direction: column; align-items: center; cursor: pointer; }
+  .map-pin .pin-bubble { background: var(--blue-mid); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: .95rem; box-shadow: 0 2px 8px rgba(37,99,235,.4); border: 2px solid white; }
+  .map-pin .pin-bubble.green { background: var(--green); box-shadow: 0 2px 8px rgba(16,185,129,.4); }
+  .map-pin .pin-label { font-size: .58rem; font-weight: 700; background: white; padding: 2px 6px; border-radius: 50px; margin-top: 3px; box-shadow: var(--shadow-sm); white-space: nowrap; color: var(--gray-700); }
+  .map-route { position: absolute; top: 57px; left: 93px; width: 130px; height: 3px; background: linear-gradient(90deg, var(--blue-mid), var(--green)); border-radius: 50px; opacity: .7; }
+  .map-presta-moving { position: absolute; top: 47px; left: 155px; font-size: 1.3rem; animation: movePresta 3s ease-in-out infinite alternate; }
+  @keyframes movePresta { 0%{left:120px} 100%{left:190px} }
+  .map-eta { position: absolute; bottom: 10px; right: 10px; background: white; border-radius: 10px; padding: 6px 10px; font-size: .7rem; font-weight: 700; color: var(--blue-dark); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 5px; }
+
+  /* Timeline statuts */
+  .timeline { padding: 16px 16px 0; display: flex; flex-direction: column; gap: 0; }
+  .tl-step { display: flex; gap: 12px; align-items: flex-start; position: relative; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 28px; }
+  .tl-circle { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .85rem; flex-shrink: 0; border: 2px solid transparent; }
+  .tl-circle.done { background: var(--green); border-color: var(--green); color: white; }
+  .tl-circle.active { background: var(--blue-mid); border-color: var(--blue-mid); color: white; animation: tl-glow .8s ease infinite alternate; }
+  @keyframes tl-glow { from{box-shadow:0 0 0 0 rgba(37,99,235,.4)} to{box-shadow:0 0 0 6px rgba(37,99,235,0)} }
+  .tl-circle.pending { background: var(--gray-100); border-color: var(--gray-300); color: var(--gray-300); }
+  .tl-line { width: 2px; flex: 1; min-height: 24px; background: var(--gray-300); margin: 2px 0; }
+  .tl-line.done { background: var(--green); }
+  .tl-content { padding-bottom: 18px; flex: 1; }
+  .tl-title { font-weight: 700; font-size: .84rem; color: var(--gray-700); }
+  .tl-title.active { color: var(--blue-mid); }
+  .tl-title.done { color: var(--green); }
+  .tl-time { font-size: .68rem; color: var(--gray-500); margin-top: 2px; }
+  .tl-desc { font-size: .72rem; color: var(--gray-500); margin-top: 4px; line-height: 1.5; }
+
+  /* Actions client */
+  .suivi-actions { padding: 0 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .suivi-presta-card { background: white; border-radius: var(--radius-sm); padding: 12px 14px; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow-sm); }
+  .suivi-presta-card .sp-avatar { width: 44px; height: 44px; border-radius: 50%; background: #DBEAFE; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+  .suivi-presta-card .sp-info { flex: 1; }
+  .suivi-presta-card .sp-name { font-weight: 800; font-size: .88rem; color: var(--blue-dark); }
+  .suivi-presta-card .sp-eta { font-size: .72rem; color: var(--gray-500); margin-top: 2px; }
+  .suivi-presta-card .sp-actions { display: flex; gap: 8px; }
+  .sp-btn { width: 36px; height: 36px; border-radius: 50%; border: none; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: transform .15s; }
+  .sp-btn:hover { transform: scale(1.1); }
+  .sp-btn.call { background: #D1FAE5; }
+  .sp-btn.msg { background: #DBEAFE; }
+
+  .btn-validate { padding: 14px; background: var(--green); color: white; border: none; border-radius: 50px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; cursor: pointer; width: 100%; box-shadow: 0 4px 14px rgba(16,185,129,.35); transition: background .2s, transform .15s; }
+  .btn-validate:hover { background: #059669; transform: translateY(-1px); }
+  .btn-problem { padding: 11px; background: transparent; color: var(--red); border: 1.5px solid var(--red); border-radius: 50px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .88rem; cursor: pointer; width: 100%; }
+  .escrow-notice { background: #EDE9FE; border: 1px solid #C4B5FD; border-radius: var(--radius-sm); padding: 10px 12px; font-size: .72rem; color: #5B21B6; line-height: 1.6; }
+</style>
+<script>
+  // Inline manifest for PWA icon
+  const manifestData = {
+    name: "Dèmè Dèmè",
+    short_name: "Dèmè Dèmè",
+    description: "Services à domicile au Burkina Faso",
+    start_url: "/",
+    display: "standalone",
+    orientation: "portrait",
+    background_color: "#1A3A6B",
+    theme_color: "#1A3A6B",
+    icons: [
+      { src: "data:image/png;base64,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", sizes: "192x192", type: "image/png", purpose: "any maskable" },
+      { src: "data:image/png;base64,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", sizes: "512x512", type: "image/png", purpose: "any maskable" }
+    ]
+  };
+  const blob = new Blob([JSON.stringify(manifestData)], {type: 'application/json'});
+  const manifestURL = URL.createObjectURL(blob);
+  document.querySelector('link[rel="manifest"]').href = manifestURL;
+</script>
+</head>
+<body>
+
+<h1 class="page-title">📱 Maquette Interactive – Dèmè Dèmè</h1>
+<p class="page-sub">Clique sur les onglets pour naviguer entre les écrans</p>
+
+<div class="tabs">
+  <button class="tab active"    onclick="show('splash')">① Accueil</button>
+  <button class="tab"           onclick="show('inscription')">② Inscription</button>
+  <button class="tab"           onclick="show('accueil')">③ App Client</button>
+  <button class="tab"           onclick="show('detail')">④ Détail Presta</button>
+  <button class="tab"           onclick="show('presta-home')">⑤ App Presta</button>
+  <button class="tab"           onclick="show('confirmation')">⑥ Confirmation</button>
+  <button class="tab"           onclick="show('gains')">⑦ Gains Presta</button>
+  <button class="tab"           onclick="show('suivi')">⑧ Suivi Tâche</button>
+  <button class="tab"           onclick="show('profil')">⑨ Profil</button>
+  <button class="tab"           onclick="show('chat')">⑩ Messagerie</button>
+  <button class="tab"           onclick="show('notifs')">⑪ Notifications</button>
+</div>
+
+<div class="phone">
+  <div class="status-bar">
+    <span>9:41</span><span>Dèmè Dèmè</span><span>📶 🔋</span>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 1 — SPLASH / ACCUEIL
+  ══════════════════════════════════ -->
+  <div class="screen active" id="splash">
+    <div style="background:linear-gradient(160deg,#1A3A6B 0%,#2563EB 100%);flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:40px 28px;">
+      <div class="logo-ring"><span>🤝</span></div>
+      <div class="logo-text">Dèmè Dèmè<small>S'entraider, c'est avancer</small></div>
+      <p class="splash-tagline">Trouve quelqu'un de confiance pour tes tâches du quotidien — lessive, ménage, courses et plus.</p>
+      <button class="btn-white" onclick="show('inscription')">🔍 Je cherche un service</button>
+      <button class="btn-ghost" onclick="show('presta-home')">💼 Je propose mes services</button>
+      <!-- Offre lancement -->
+      <div style="background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);border-radius:14px;padding:12px 16px;width:100%;text-align:center;">
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:.9rem;color:#FCD34D;">🎉 Offre de lancement</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.85);margin-top:4px;line-height:1.5;">
+          👤 <strong>50 premiers clients</strong> : inscription <span style="text-decoration:line-through;opacity:.6;">500 FCFA</span> <span style="color:#86EFAC;font-weight:800;">GRATUITE</span><br>
+          💼 <strong>50 premiers prestataires</strong> : commission <span style="text-decoration:line-through;opacity:.6;">10%</span> → <span style="color:#86EFAC;font-weight:800;">5% seulement</span>
+        </div>
+        <div style="font-size:.68rem;color:rgba(255,255,255,.5);margin-top:6px;">⏳ Places limitées — offre valable jusqu'à épuisement</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 2 — INSCRIPTION CLIENT
+  ══════════════════════════════════ -->
+  <div class="screen" id="inscription">
+    <!-- En-tête -->
+    <div class="insc-header">
+      <button class="back-btn" onclick="show('splash')">←</button>
+      <h2>Créer mon compte</h2>
+      <p>Accède à tous les services près de toi</p>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px;">
+        <div class="badge-500">🎉 Place #23/50 — Inscription GRATUITE !</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.7);">Après les 50 premiers : 500 FCFA · <strong style="color:#FCD34D;">Plus que 27 places</strong></div>
+      </div>
+    </div>
+
+    <div class="scroll-y">
+      <!-- Connexion sociale -->
+      <div class="social-methods">
+        <div class="section-title" style="margin-bottom:6px;">Connexion rapide</div>
+        <button class="social-btn">
+          <div class="s-logo google-logo">
+            <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          </div>
+          Continuer avec Google
+        </button>
+        <button class="social-btn">
+          <div class="s-logo facebook-logo">f</div>
+          Continuer avec Facebook
+        </button>
+      </div>
+
+      <div class="social-divider"><span>ou s'inscrire avec</span></div>
+
+      <!-- Onglets Email / Téléphone -->
+      <div class="method-tabs">
+        <button class="method-tab active" id="tab-email" onclick="switchMethod('email')">📧 E-mail</button>
+        <button class="method-tab" id="tab-phone" onclick="switchMethod('phone')">📱 Numéro</button>
+      </div>
+
+      <!-- Formulaire e-mail -->
+      <div class="form-body" id="form-email">
+        <div class="form-group">
+          <label>Prénom & Nom</label>
+          <input type="text" placeholder="Ex : Aminata Ouédraogo">
+        </div>
+        <div class="form-group">
+          <label>Adresse e-mail</label>
+          <input type="email" placeholder="exemple@gmail.com">
+        </div>
+        <div class="form-group">
+          <label>Quartier / Secteur</label>
+          <input type="text" placeholder="Ex : Ouaga 2000, Pissy…">
+        </div>
+        <div class="form-group">
+          <label>Mot de passe</label>
+          <input type="password" placeholder="••••••••">
+        </div>
+
+        <!-- Moyens de paiement -->
+        <div class="pay-section">
+          <div class="pay-section-title">💳 Paiement d'inscription — 500 FCFA</div>
+          <p style="font-size:.72rem;color:var(--gray-500);margin-bottom:4px;">Choisis ton moyen de paiement :</p>
+          <div class="pay-grid">
+            <div class="pay-method selected" onclick="selectPay(this)">
+              <span style="font-size:1.2rem;">📱</span> Orange Money
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo"><img src="data:image/jpeg;base64,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" alt="Moov"></div> Moov Money
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo"><img src="data:image/jpeg;base64,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" alt="Wave"></div> Wave
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo"><img src="data:image/jpeg;base64,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" alt="Sank"></div> Sankmoney
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo"><img src="data:image/jpeg;base64,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" alt="Telecel"></div> Telecel Money
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <span style="font-size:1.2rem;">💳</span> Visa
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo" style="background:white;"><img src="data:image/jpeg;base64,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" alt="PayPal"></div> PayPal
+            </div>
+          </div>
+        </div>
+        <!-- Vérification d'identité -->
+        <div class="identity-section">
+          <div class="identity-title">🪪 Vérification d'identité</div>
+          <p style="font-size:.72rem;color:#92400E;line-height:1.5;">Pour la sécurité de tous, nous vérifions ton identité avant validation.</p>
+          <div class="id-uploads">
+            <div class="id-upload-item" id="id-photo-e" onclick="simulateUpload(this,'id-photo-e')">
+              <span class="id-upload-icon">📸</span>
+              <div class="id-upload-text">
+                <div class="id-label">Photo de profil</div>
+                <div class="id-sub">Fond neutre · Face visible · Bonne lumière</div>
+              </div>
+              <span class="id-status">⬆️</span>
+            </div>
+            <div class="id-upload-item" id="id-recto-e" onclick="simulateUpload(this,'id-recto-e')">
+              <span class="id-upload-icon">📄</span>
+              <div class="id-upload-text">
+                <div class="id-label">CNI / Passeport — Recto</div>
+                <div class="id-sub">Côté avant · Lisible · Non expiré</div>
+              </div>
+              <span class="id-status">⬆️</span>
+            </div>
+            <div class="id-upload-item" id="id-verso-e" onclick="simulateUpload(this,'id-verso-e')">
+              <span class="id-upload-icon">🔄</span>
+              <div class="id-upload-text">
+                <div class="id-label">CNI / Passeport — Verso</div>
+                <div class="id-sub">Côté arrière · Toutes informations visibles</div>
+              </div>
+              <span class="id-status">⬆️</span>
+            </div>
+          </div>
+          <div class="identity-notice">🔒 Documents chiffrés · Vérification sous 24h · Confidentialité garantie</div>
+        </div>
+
+        <button class="btn-blue" onclick="show('accueil')">🎉 S'inscrire GRATUITEMENT →</button>
+        <div style="font-size:.72rem;color:var(--gray-500);text-align:center;">Place #23/50 — Offre de lancement</div>
+      </div>
+
+      <div class="form-body" id="form-phone" style="display:none;">
+        <div class="form-group">
+          <label>Prénom & Nom</label>
+          <input type="text" placeholder="Ex : Aminata Ouédraogo">
+        </div>
+        <div class="form-group">
+          <label>Numéro de téléphone</label>
+          <input type="tel" placeholder="+226 XX XX XX XX">
+        </div>
+        <div class="form-group">
+          <label>Quartier / Secteur</label>
+          <input type="text" placeholder="Ex : Ouaga 2000, Pissy…">
+        </div>
+        <div class="form-group">
+          <label>Code de vérification SMS</label>
+          <input type="text" placeholder="_ _ _ _ _ _" style="letter-spacing:8px;text-align:center;font-weight:700;">
+        </div>
+        <div style="font-size:.75rem;color:var(--blue-mid);text-align:center;cursor:pointer;">📨 Renvoyer le code SMS</div>
+
+        <div class="pay-section">
+          <div class="pay-section-title">💳 Paiement d'inscription — 500 FCFA</div>
+          <p style="font-size:.72rem;color:var(--gray-500);margin-bottom:4px;">Choisis ton moyen de paiement :</p>
+          <div class="pay-grid">
+            <div class="pay-method selected" onclick="selectPay(this)">
+              <span style="font-size:1.2rem;">📱</span> Orange Money
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo"><img src="data:image/jpeg;base64,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" alt="Moov"></div> Moov Money
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo"><img src="data:image/jpeg;base64,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" alt="Wave"></div> Wave
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo"><img src="data:image/jpeg;base64,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" alt="Sank"></div> Sankmoney
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo"><img src="data:image/jpeg;base64,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" alt="Telecel"></div> Telecel Money
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <span style="font-size:1.2rem;">💳</span> Visa
+            </div>
+            <div class="pay-method" onclick="selectPay(this)">
+              <div class="pm-logo" style="background:white;"><img src="data:image/jpeg;base64,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" alt="PayPal"></div> PayPal
+            </div>
+          </div>
+        </div>
+        <!-- Vérification d'identité -->
+        <div class="identity-section">
+          <div class="identity-title">🪪 Vérification d'identité</div>
+          <p style="font-size:.72rem;color:#92400E;line-height:1.5;">Pour la sécurité de tous, nous vérifions ton identité avant validation.</p>
+          <div class="id-uploads">
+            <div class="id-upload-item" id="id-photo-p" onclick="simulateUpload(this,'id-photo-p')">
+              <span class="id-upload-icon">📸</span>
+              <div class="id-upload-text">
+                <div class="id-label">Photo de profil</div>
+                <div class="id-sub">Fond neutre · Face visible · Bonne lumière</div>
+              </div>
+              <span class="id-status">⬆️</span>
+            </div>
+            <div class="id-upload-item" id="id-recto-p" onclick="simulateUpload(this,'id-recto-p')">
+              <span class="id-upload-icon">📄</span>
+              <div class="id-upload-text">
+                <div class="id-label">CNI / Passeport — Recto</div>
+                <div class="id-sub">Côté avant · Lisible · Non expiré</div>
+              </div>
+              <span class="id-status">⬆️</span>
+            </div>
+            <div class="id-upload-item" id="id-verso-p" onclick="simulateUpload(this,'id-verso-p')">
+              <span class="id-upload-icon">🔄</span>
+              <div class="id-upload-text">
+                <div class="id-label">CNI / Passeport — Verso</div>
+                <div class="id-sub">Côté arrière · Toutes informations visibles</div>
+              </div>
+              <span class="id-status">⬆️</span>
+            </div>
+          </div>
+          <div class="identity-notice">🔒 Documents chiffrés · Vérification sous 24h · Confidentialité garantie</div>
+        </div>
+
+        <button class="btn-blue" onclick="show('accueil')">🎉 S'inscrire GRATUITEMENT →</button>
+        <div style="font-size:.72rem;color:var(--gray-500);text-align:center;">Place #23/50 — Offre de lancement</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 3 — APP CLIENT (ACCUEIL)
+  ══════════════════════════════════ -->
+  <div class="screen" id="accueil">
+    <!-- En-tête bleu -->
+    <div class="home-header">
+      <div class="home-header-top">
+        <div class="greeting">
+          Bonjour, Aminata 👋
+          <small>📍 Ouaga 2000 · Ouagadougou</small>
+        </div>
+        <button class="notif-btn">🔔<div class="notif-dot"></div></button>
+      </div>
+      <div class="search-bar">
+        <span>🔍</span>
+        <input type="text" placeholder="Chercher un service…">
+      </div>
+    </div>
+
+    <!-- Corps scrollable -->
+    <div class="scroll-y">
+      <div class="home-body">
+
+        <!-- Catégories -->
+        <div>
+          <div class="section-title">Que cherches-tu ?</div>
+          <div class="cats">
+            <div class="cat-item active" onclick="activateCat(this)"><span class="cat-icon">👕</span><span class="cat-label">Lessive</span></div>
+            <div class="cat-item" onclick="activateCat(this)"><span class="cat-icon">🧹</span><span class="cat-label">Ménage</span></div>
+            <div class="cat-item" onclick="activateCat(this)"><span class="cat-icon">🍽️</span><span class="cat-label">Vaisselle</span></div>
+            <div class="cat-item" onclick="activateCat(this)"><span class="cat-icon">🛒</span><span class="cat-label">Courses</span></div>
+            <div class="cat-item" onclick="activateCat(this)"><span class="cat-icon">🏪</span><span class="cat-label">Marché</span></div>
+            <div class="cat-item" onclick="activateCat(this)"><span class="cat-icon">🚗</span><span class="cat-label">Transport</span></div>
+            <div class="cat-item" onclick="activateCat(this)"><span class="cat-icon">🍱</span><span class="cat-label">Repas</span></div>
+            <div class="cat-item" onclick="activateCat(this)"><span class="cat-icon">📦</span><span class="cat-label">Rangement</span></div>
+            <div class="cat-item" onclick="activateCat(this)"><span class="cat-icon">➕</span><span class="cat-label">Autres</span></div>
+          </div>
+        </div>
+
+        <!-- Bannière offre lancement -->
+        <div style="background:linear-gradient(135deg,#065F46,#10B981);border-radius:var(--radius);padding:14px 16px;color:white;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:.88rem;">🎉 Offre de lancement</div>
+            <div style="font-size:.72rem;opacity:.9;margin-top:3px;">50 premiers clients : inscription gratuite !</div>
+            <div style="font-size:.68rem;opacity:.7;margin-top:2px;">⏳ Il reste 27 places</div>
+          </div>
+          <div style="background:rgba(255,255,255,.2);border-radius:50px;padding:6px 12px;font-weight:800;font-size:.75rem;white-space:nowrap;">23 / 50</div>
+        </div>
+
+        <!-- Prestataires disponibles -->
+        <div>
+          <div class="section-title">Prestataires disponibles ✅</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+
+            <div class="presta-card" onclick="show('detail')">
+              <div class="avatar" style="background:#DBEAFE;">👩🏾</div>
+              <div class="presta-info">
+                <div class="presta-name">Fatima K.</div>
+                <div class="presta-service">🧹 Ménage & Lessive</div>
+                <div class="presta-meta">
+                  <span class="stars">★★★★★</span>
+                  <span class="badge badge-green">Disponible</span>
+                  <span class="badge badge-blue">47 tâches</span>
+                </div>
+              </div>
+              <div class="presta-price">1 500<br><small>FCFA/h</small></div>
+            </div>
+
+            <div class="presta-card" onclick="show('detail')">
+              <div class="avatar" style="background:#D1FAE5;">👨🏾</div>
+              <div class="presta-info">
+                <div class="presta-name">Issouf T.</div>
+                <div class="presta-service">🛒 Courses & Marché</div>
+                <div class="presta-meta">
+                  <span class="stars">★★★★☆</span>
+                  <span class="badge badge-green">Disponible</span>
+                  <span class="badge badge-blue">23 tâches</span>
+                </div>
+              </div>
+              <div class="presta-price">1 000<br><small>FCFA/h</small></div>
+            </div>
+
+            <div class="presta-card" onclick="show('detail')">
+              <div class="avatar" style="background:#FEF3C7;">👩🏿</div>
+              <div class="presta-info">
+                <div class="presta-name">Mariam S.</div>
+                <div class="presta-service">🍽️ Vaisselle & Cuisine</div>
+                <div class="presta-meta">
+                  <span class="stars">★★★★★</span>
+                  <span class="badge badge-green">Disponible</span>
+                  <span class="badge badge-blue">61 tâches</span>
+                </div>
+              </div>
+              <div class="presta-price">1 200<br><small>FCFA/h</small></div>
+            </div>
+
+            <div class="presta-card" onclick="show('detail')">
+              <div class="avatar" style="background:#FCE7F3;">👨🏽</div>
+              <div class="presta-info">
+                <div class="presta-name">Adama B.</div>
+                <div class="presta-service">🚗 Transport & Commissions</div>
+                <div class="presta-meta">
+                  <span class="stars">★★★★☆</span>
+                  <span class="badge badge-green">Disponible</span>
+                  <span class="badge badge-blue">38 tâches</span>
+                </div>
+              </div>
+              <div class="presta-price">800<br><small>FCFA/km</small></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation bas -->
+    <div class="bottom-nav">
+      <div class="nav-item active"><span class="nav-icon">🏠</span>Accueil</div>
+      <div class="nav-item"><span class="nav-icon">🔍</span>Explorer</div>
+      <div class="nav-item"><span class="nav-icon">📋</span>Mes tâches</div>
+      <div class="nav-item"><span class="nav-icon">👤</span>Profil</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 4 — DÉTAIL PRESTATAIRE
+  ══════════════════════════════════ -->
+  <div class="screen" id="detail">
+    <div class="detail-scroll">
+      <!-- Hero prestataire -->
+      <div class="detail-hero">
+        <button class="detail-back" onclick="show('accueil')">←</button>
+        <div class="detail-avatar">👩🏾</div>
+        <div class="detail-name">Fatima Kaboré</div>
+        <div class="detail-tags">
+          <span class="detail-tag">🧹 Ménage</span>
+          <span class="detail-tag">👕 Lessive</span>
+          <span class="detail-tag">📦 Rangement</span>
+        </div>
+        <div class="detail-stars">★★★★★</div>
+        <span class="badge badge-green">✅ Disponible maintenant</span>
+      </div>
+
+      <div class="detail-body">
+        <!-- Stats rapides -->
+        <div class="info-row">
+          <div class="info-box"><div class="val">47</div><div class="lbl">Tâches faites</div></div>
+          <div class="info-box"><div class="val">4.9★</div><div class="lbl">Note moyenne</div></div>
+          <div class="info-box"><div class="val">8 mois</div><div class="lbl">Ancienneté</div></div>
+        </div>
+
+        <!-- Description -->
+        <div style="background:var(--blue-pale);border-radius:var(--radius-sm);padding:12px;font-size:.82rem;color:var(--gray-700);line-height:1.6;border-left:3px solid var(--blue-mid);">
+          💬 <em>"Je suis sérieuse, ponctuelle et discrète. Je travaille à Ouaga 2000, Pissy et Karpala. Disponible 7j/7."</em>
+        </div>
+
+        <!-- Services & Tarifs -->
+        <div>
+          <div class="section-title">Services & Tarifs</div>
+          <div class="services-list">
+            <div class="service-item">
+              <span class="s-name">🧹 Nettoyage maison</span>
+              <span class="s-price">2 500 FCFA</span>
+            </div>
+            <div class="service-item">
+              <span class="s-name">👕 Lessive (5 kg)</span>
+              <span class="s-price">1 500 FCFA</span>
+            </div>
+            <div class="service-item">
+              <span class="s-name">📦 Rangement complet</span>
+              <span class="s-price">1 000 FCFA</span>
+            </div>
+            <div class="service-item">
+              <span class="s-name">🍽️ Vaisselle</span>
+              <span class="s-price">800 FCFA</span>
+            </div>
+            <div class="service-item" style="border:1.5px dashed var(--blue-mid);background:var(--blue-pale);">
+              <span class="s-name" style="color:var(--blue-mid);">➕ Autres tâches</span>
+              <span class="s-price" style="color:var(--blue-mid);">Sur devis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Note globale + barres -->
+        <div>
+          <div class="section-title">Avis clients (12)</div>
+          <div class="rating-global">
+            <div class="rating-score">
+              <div class="big-note">4.9</div>
+              <div class="big-stars">★★★★★</div>
+              <div class="big-count">12 avis</div>
+            </div>
+            <div class="rating-bars">
+              <div class="rating-bar-row"><span class="bar-label">5★</span><div class="bar-track"><div class="bar-fill" style="width:83%"></div></div><span class="bar-count">10</span></div>
+              <div class="rating-bar-row"><span class="bar-label">4★</span><div class="bar-track"><div class="bar-fill" style="width:17%"></div></div><span class="bar-count">2</span></div>
+              <div class="rating-bar-row"><span class="bar-label">3★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+              <div class="rating-bar-row"><span class="bar-label">2★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+              <div class="rating-bar-row"><span class="bar-label">1★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avis individuels -->
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="avis-card">
+            <div class="avis-top">
+              <span class="avis-auteur">👤 Rokia S.</span>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;">
+                <span class="avis-stars">★★★★★</span>
+                <span class="avis-date">Il y a 3 jours</span>
+              </div>
+            </div>
+            <div class="avis-texte">Très sérieuse et efficace ! Ma maison était impeccable. Je recommande vivement.</div>
+            <span class="avis-service-badge">🧹 Nettoyage maison</span>
+          </div>
+          <div class="avis-card">
+            <div class="avis-top">
+              <span class="avis-auteur">👤 Moussa K.</span>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;">
+                <span class="avis-stars">★★★★☆</span>
+                <span class="avis-date">Il y a 1 semaine</span>
+              </div>
+            </div>
+            <div class="avis-texte">Ponctuelle et discrète. Très bon travail pour la lessive.</div>
+            <span class="avis-service-badge">👕 Lessive</span>
+          </div>
+          <div class="avis-card">
+            <div class="avis-top">
+              <span class="avis-auteur">👤 Aïssata B.</span>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;">
+                <span class="avis-stars">★★★★★</span>
+                <span class="avis-date">Il y a 2 semaines</span>
+              </div>
+            </div>
+            <div class="avis-texte">Impeccable du début à la fin, je la rappelle sans hésiter !</div>
+            <span class="avis-service-badge">📦 Rangement complet</span>
+          </div>
+        </div>
+
+        <!-- Formulaire de notation interactif -->
+        <div class="rating-form">
+          <div class="rating-form-title">⭐ Laisser un avis</div>
+          <div class="stars-input" id="starsInput">
+            <span class="star-btn" onclick="setRating(1)">★</span>
+            <span class="star-btn" onclick="setRating(2)">★</span>
+            <span class="star-btn" onclick="setRating(3)">★</span>
+            <span class="star-btn" onclick="setRating(4)">★</span>
+            <span class="star-btn" onclick="setRating(5)">★</span>
+          </div>
+          <div class="star-label" id="starLabel">Appuie sur une étoile pour noter</div>
+          <textarea class="rating-textarea" id="ratingComment" rows="3" placeholder="Partage ton expérience avec Fatima…"></textarea>
+          <button class="btn-blue" onclick="submitRating()" style="font-size:.88rem;padding:11px;">Envoyer mon avis →</button>
+          <div class="rating-success" id="ratingSuccess">✅ Merci pour ton avis ! Il sera publié après validation.</div>
+        </div>
+
+        <button class="btn-book" onclick="show('confirmation')">📅 Réserver Fatima — Choisir un créneau</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 5 — APP PRESTATAIRE
+  ══════════════════════════════════ -->
+  <div class="screen" id="presta-home">
+    <!-- En-tête prestataire -->
+    <div class="presta-header">
+      <div class="presta-header-top">
+        <div class="presta-greeting">
+          <div class="sub">Bienvenue,</div>
+          <div class="name">Issouf Traoré 👋</div>
+        </div>
+        <button class="notif-btn">🔔<div class="notif-dot"></div></button>
+      </div>
+      <!-- Carte gains -->
+      <div class="earnings-card">
+        <div class="e-label">💰 Gains du mois (juin)</div>
+        <div class="e-amount">27 000 <span style="font-size:.9rem;font-weight:600;">FCFA</span></div>
+        <div class="e-sub">Commission réduite : <span style="text-decoration:line-through;opacity:.6;">10%</span> → <span style="color:#86EFAC;font-weight:800;">5%</span> (offre lancement · place #18/50)</div>
+        <div class="earnings-meta">
+          <div class="e-meta-item"><div class="v">23</div><div class="l">Tâches</div></div>
+          <div class="e-meta-item"><div class="v">3 000</div><div class="l">Commission</div></div>
+          <div class="e-meta-item"><div class="v">4.8 ⭐</div><div class="l">Ma note</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Corps scrollable -->
+    <div class="scroll-y">
+      <div class="presta-body-scroll">
+
+        <!-- Toggle disponibilité -->
+        <div class="toggle-status">
+          <div class="toggle-label">
+            Je suis disponible
+            <small>Les clients peuvent voir ton profil</small>
+          </div>
+          <div class="toggle-switch" id="statusToggle" onclick="toggleStatus()"></div>
+        </div>
+
+        <!-- Stats rapides -->
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="s-icon">📋</div>
+            <div class="s-val">2</div>
+            <div class="s-lbl">Nouvelles demandes</div>
+          </div>
+          <div class="stat-box">
+            <div class="s-icon">✅</div>
+            <div class="s-val">1</div>
+            <div class="s-lbl">Tâche en cours</div>
+          </div>
+          <div class="stat-box">
+            <div class="s-icon">🏆</div>
+            <div class="s-val">23</div>
+            <div class="s-lbl">Tâches ce mois</div>
+          </div>
+          <div class="stat-box">
+            <div class="s-icon">⏱️</div>
+            <div class="s-val">~2h</div>
+            <div class="s-lbl">Durée moyenne</div>
+          </div>
+        </div>
+
+        <!-- Nouvelles demandes -->
+        <div>
+          <div class="section-title">🔔 Nouvelles demandes</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+
+            <div class="tache-card">
+              <div class="tache-top">
+                <span class="tache-type">🛒 Courses au marché</span>
+                <span class="tache-statut statut-attente">En attente</span>
+              </div>
+              <div class="tache-client">👤 Aminata O. · 📍 Ouaga 2000 · Aujourd'hui à 14h00</div>
+              <div class="tache-finance">
+                <div>
+                  <div class="tache-price">3 000 FCFA</div>
+                  <div class="tache-net">✅ Tu reçois : 2 850 FCFA <span style="font-size:.65rem;color:var(--gold);">(5% offre lancement)</span></div>
+                </div>
+                <div class="tache-duree">~2h estimé</div>
+              </div>
+              <div class="tache-actions">
+                <button class="btn-accept">✓ Accepter</button>
+                <button class="btn-refuse">✗ Refuser</button>
+              </div>
+            </div>
+
+            <div class="tache-card">
+              <div class="tache-top">
+                <span class="tache-type">🧹 Ménage maison</span>
+                <span class="tache-statut statut-attente">En attente</span>
+              </div>
+              <div class="tache-client">👤 Salimata D. · 📍 Pissy · Demain à 9h00</div>
+              <div class="tache-finance">
+                <div>
+                  <div class="tache-price">2 500 FCFA</div>
+                  <div class="tache-net">✅ Tu reçois : 2 375 FCFA <span style="font-size:.65rem;color:var(--gold);">(5% offre lancement)</span></div>
+                </div>
+                <div class="tache-duree">~3h estimé</div>
+              </div>
+              <div class="tache-actions">
+                <button class="btn-accept">✓ Accepter</button>
+                <button class="btn-refuse">✗ Refuser</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tâche en cours -->
+        <div>
+          <div class="section-title">⚡ En cours</div>
+          <div class="tache-card encours">
+            <div class="tache-top">
+              <span class="tache-type">🍱 Aller payer à manger</span>
+              <span class="tache-statut statut-encours">En cours</span>
+            </div>
+            <div class="tache-client">👤 Boubacar S. · 📍 Secteur 15 · Démarré à 12h30</div>
+            <div class="tache-finance">
+              <div>
+                <div class="tache-price">1 500 FCFA</div>
+                <div class="tache-net">✅ Tu reçois : 1 425 FCFA <span style="font-size:.65rem;color:var(--gold);">(5% offre lancement)</span></div>
+              </div>
+              <div class="tache-duree">En cours…</div>
+            </div>
+            <button style="width:100%;padding:9px;background:var(--green);color:white;border:none;border-radius:50px;font-weight:700;font-size:.82rem;cursor:pointer;margin-top:10px;font-family:'Nunito',sans-serif;">✓ Marquer comme terminée</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Navigation bas -->
+    <div class="bottom-nav">
+      <div class="nav-item active"><span class="nav-icon">🏠</span>Accueil</div>
+      <div class="nav-item"><span class="nav-icon">📋</span>Mes tâches</div>
+      <div class="nav-item"><span class="nav-icon">💰</span>Gains</div>
+      <div class="nav-item"><span class="nav-icon">👤</span>Profil</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 6 — CONFIRMATION
+  ══════════════════════════════════ -->
+  <div class="screen" id="confirmation">
+    <div class="confirm-icon">✅</div>
+    <div class="confirm-title">Réservation confirmée !</div>
+    <div class="confirm-sub">Fatima a été notifiée. Elle confirmera sous peu. Tu recevras un SMS de confirmation.</div>
+    <div class="confirm-detail">
+      <div class="confirm-row"><span class="k">Prestataire</span><span class="v">Fatima Kaboré</span></div>
+      <div class="confirm-row"><span class="k">Service</span><span class="v">🧹 Nettoyage maison</span></div>
+      <div class="confirm-row"><span class="k">Date & heure</span><span class="v">Aujourd'hui, 15h00</span></div>
+      <div class="confirm-row"><span class="k">Lieu</span><span class="v">📍 Ouaga 2000</span></div>
+      <hr class="confirm-sep">
+      <div class="confirm-row"><span class="k">Montant payé</span><span class="v">2 500 FCFA</span></div>
+      <div class="confirm-row"><span class="k">Moyen de paiement</span><span class="v" style="color:var(--green);">✓ Orange Money</span></div>
+      <div class="confirm-row"><span class="k">Commission Dèmè Dèmè</span><span class="v" style="color:var(--gold);">125 FCFA <span style="font-size:.72rem;">(5% 🎉 offre lancement)</span></span></div>
+      <div class="confirm-row"><span class="k">Fatima reçoit</span><span class="v" style="color:var(--blue-mid);">2 375 FCFA</span></div>
+    </div>
+    <button class="btn-blue" onclick="show('accueil')">🏠 Retour à l'accueil</button>
+    <button class="btn-outline-blue" onclick="show('accueil')">📍 Suivre ma tâche en temps réel</button>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 7 — HISTORIQUE DES GAINS
+  ══════════════════════════════════ -->
+  <div class="screen" id="gains">
+    <!-- En-tête -->
+    <div class="gains-header">
+      <div class="gains-header-top">
+        <button class="back-btn" onclick="show('presta-home')" style="margin-bottom:0;">←</button>
+        <div class="gains-title">💰 Mes Gains</div>
+      </div>
+      <div class="gains-summary">
+        <div class="gains-sum-box full">
+          <div class="gsb-label">Total versé ce mois (juin 2025)</div>
+          <div class="gsb-val">27 000 FCFA <span style="font-size:.75rem;font-weight:600;opacity:.8;">nets</span></div>
+        </div>
+        <div class="gains-sum-box">
+          <div class="gsb-label">En attente (escrow)</div>
+          <div class="gsb-val" style="color:#FCD34D;">4 500 FCFA</div>
+        </div>
+        <div class="gains-sum-box">
+          <div class="gsb-label">Commission totale</div>
+          <div class="gsb-val" style="color:#FCA5A5;">1 650 FCFA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filtres -->
+    <div class="gains-filter">
+      <button class="gf-btn active" onclick="filterGains(this)">Tout</button>
+      <button class="gf-btn" onclick="filterGains(this)">✅ Versé</button>
+      <button class="gf-btn" onclick="filterGains(this)">⏳ En attente</button>
+      <button class="gf-btn" onclick="filterGains(this)">🔒 Escrow</button>
+    </div>
+
+    <div class="scroll-y">
+      <div class="gains-list">
+
+        <!-- Versé -->
+        <div class="gain-card">
+          <div class="gain-icon verse">✅</div>
+          <div class="gain-info">
+            <div class="gain-service">🧹 Nettoyage maison</div>
+            <div class="gain-client">👤 Aminata O. · Ouaga 2000</div>
+            <div class="gain-date">Aujourd'hui · 14h32</div>
+            <div class="gain-escrow">🔓 Escrow libéré après validation client</div>
+          </div>
+          <div class="gain-amounts">
+            <div class="gain-brut">2 500 FCFA</div>
+            <div class="gain-comm">−125 FCFA (5%)</div>
+            <div class="gain-net">2 375 FCFA</div>
+            <span class="gain-statut gs-verse">Versé ✓</span>
+          </div>
+        </div>
+
+        <!-- Versé -->
+        <div class="gain-card">
+          <div class="gain-icon verse">✅</div>
+          <div class="gain-info">
+            <div class="gain-service">👕 Lessive 5 kg</div>
+            <div class="gain-client">👤 Salimata D. · Pissy</div>
+            <div class="gain-date">Hier · 10h15</div>
+            <div class="gain-escrow">🔓 Libéré automatiquement après 24h</div>
+          </div>
+          <div class="gain-amounts">
+            <div class="gain-brut">1 500 FCFA</div>
+            <div class="gain-comm">−75 FCFA (5%)</div>
+            <div class="gain-net">1 425 FCFA</div>
+            <span class="gain-statut gs-verse">Versé ✓</span>
+          </div>
+        </div>
+
+        <!-- Escrow bloqué -->
+        <div class="gain-card">
+          <div class="gain-icon attente">🔒</div>
+          <div class="gain-info">
+            <div class="gain-service">🛒 Courses au marché</div>
+            <div class="gain-client">👤 Boubacar S. · Secteur 15</div>
+            <div class="gain-date">Aujourd'hui · 12h30 · En cours</div>
+            <div class="gain-escrow">⏳ En séquestre — libéré à validation</div>
+          </div>
+          <div class="gain-amounts">
+            <div class="gain-brut">3 000 FCFA</div>
+            <div class="gain-comm">−150 FCFA (5%)</div>
+            <div class="gain-net">2 850 FCFA</div>
+            <span class="gain-statut gs-escrow">Escrow 🔒</span>
+          </div>
+        </div>
+
+        <!-- En attente validation -->
+        <div class="gain-card">
+          <div class="gain-icon attente">⏳</div>
+          <div class="gain-info">
+            <div class="gain-service">🍽️ Vaisselle</div>
+            <div class="gain-client">👤 Rokia K. · Karpala</div>
+            <div class="gain-date">Il y a 2 jours · 9h00</div>
+            <div class="gain-escrow">⏳ Attente validation client (délai 24h)</div>
+          </div>
+          <div class="gain-amounts">
+            <div class="gain-brut">800 FCFA</div>
+            <div class="gain-comm">−40 FCFA (5%)</div>
+            <div class="gain-net">760 FCFA</div>
+            <span class="gain-statut gs-attente">En attente</span>
+          </div>
+        </div>
+
+        <!-- Versé -->
+        <div class="gain-card">
+          <div class="gain-icon verse">✅</div>
+          <div class="gain-info">
+            <div class="gain-service">📦 Rangement complet</div>
+            <div class="gain-client">👤 Moussa T. · Ouaga 2000</div>
+            <div class="gain-date">Il y a 3 jours · 15h45</div>
+            <div class="gain-escrow">🔓 Escrow libéré après validation client</div>
+          </div>
+          <div class="gain-amounts">
+            <div class="gain-brut">1 000 FCFA</div>
+            <div class="gain-comm">−50 FCFA (5%)</div>
+            <div class="gain-net">950 FCFA</div>
+            <span class="gain-statut gs-verse">Versé ✓</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA retrait -->
+      <div class="gains-cta">
+        <div class="cta-text">
+          💳 Solde disponible<br>
+          <strong style="font-size:1rem;">27 000 FCFA</strong> · Orange Money
+        </div>
+        <button class="cta-btn">Retirer →</button>
+      </div>
+
+      <!-- Légende escrow -->
+      <div style="margin:0 14px 20px;background:var(--white);border-radius:var(--radius-sm);padding:12px 14px;font-size:.72rem;color:var(--gray-500);line-height:1.7;box-shadow:var(--shadow-sm);">
+        <div style="font-weight:700;color:var(--blue-dark);margin-bottom:4px;">ℹ️ Comment fonctionne le paiement ?</div>
+        🔒 <strong>Escrow</strong> : le client paie, l'argent est sécurisé chez Dèmè Dèmè<br>
+        ✅ <strong>Versé</strong> : tâche validée → virement Orange Money automatique<br>
+        ⏳ <strong>En attente</strong> : libération auto après 24h sans contestation<br>
+        📉 Commission : <strong style="color:var(--gold);">5% seulement</strong> (offre de lancement)
+      </div>
+    </div>
+
+    <!-- Navigation bas -->
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="show('presta-home')"><span class="nav-icon">🏠</span>Accueil</div>
+      <div class="nav-item"><span class="nav-icon">📋</span>Mes tâches</div>
+      <div class="nav-item active"><span class="nav-icon">💰</span>Gains</div>
+      <div class="nav-item"><span class="nav-icon">👤</span>Profil</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 8 — SUIVI TÂCHE EN TEMPS RÉEL
+  ══════════════════════════════════ -->
+  <div class="screen" id="suivi">
+    <!-- En-tête -->
+    <div class="suivi-header">
+      <div class="suivi-header-top">
+        <button class="back-btn" onclick="show('confirmation')" style="margin-bottom:0;">←</button>
+        <div>
+          <div class="suivi-header-title">📍 Suivi en temps réel</div>
+          <div class="suivi-header-sub">🧹 Nettoyage maison · Fatima Kaboré</div>
+        </div>
+      </div>
+      <div class="suivi-status-pill">
+        <span class="pulse-dot"></span> Fatima est en route · Arrivée dans 8 min
+      </div>
+    </div>
+
+    <!-- Carte simulée -->
+    <div class="map-area">
+      <div class="map-bg"></div>
+      <!-- Routes -->
+      <div class="map-road-h r1"></div>
+      <div class="map-road-h r2"></div>
+      <div class="map-road-v v1"></div>
+      <div class="map-road-v v2"></div>
+      <!-- Route tracée -->
+      <div class="map-route"></div>
+      <!-- Prestataire qui bouge -->
+      <div class="map-presta-moving">🛵</div>
+      <!-- Pin client -->
+      <div class="map-pin" style="left:208px;top:40px;">
+        <div class="pin-bubble">🏠</div>
+        <div class="pin-label">Chez moi</div>
+      </div>
+      <!-- Pin départ prestataire -->
+      <div class="map-pin" style="left:72px;top:40px;">
+        <div class="pin-bubble green">👩🏾</div>
+        <div class="pin-label">Fatima</div>
+      </div>
+      <!-- ETA -->
+      <div class="map-eta">🕐 ~8 min</div>
+    </div>
+
+    <div class="scroll-y">
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="tl-step">
+          <div class="tl-left">
+            <div class="tl-circle done">✓</div>
+            <div class="tl-line done"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title done">✅ Réservation confirmée</div>
+            <div class="tl-time">Aujourd'hui · 14h05</div>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-left">
+            <div class="tl-circle done">✓</div>
+            <div class="tl-line done"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title done">💳 Paiement sécurisé (escrow)</div>
+            <div class="tl-time">Aujourd'hui · 14h06</div>
+            <div class="tl-desc">2 500 FCFA bloqués en sécurité chez Dèmè Dèmè</div>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-left">
+            <div class="tl-circle done">✓</div>
+            <div class="tl-line done"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title done">👩🏾 Fatima a accepté</div>
+            <div class="tl-time">Aujourd'hui · 14h09</div>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-left">
+            <div class="tl-circle active">🛵</div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title active">En route vers toi</div>
+            <div class="tl-time">Depuis 14h22 · ~8 min restantes</div>
+            <div class="tl-desc">Fatima se déplace depuis Pissy</div>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-left">
+            <div class="tl-circle pending">🔔</div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title" style="color:var(--gray-300);">Arrivée &amp; début de tâche</div>
+            <div class="tl-time" style="color:var(--gray-300);">Prévu vers 14h30</div>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-left">
+            <div class="tl-circle pending">⭐</div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title" style="color:var(--gray-300);">Tâche terminée · Validation</div>
+            <div class="tl-time" style="color:var(--gray-300);">Prévu vers 16h30</div>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-left">
+            <div class="tl-circle pending">💸</div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title" style="color:var(--gray-300);">Versement automatique à Fatima</div>
+            <div class="tl-time" style="color:var(--gray-300);">Immédiat après validation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="suivi-actions">
+        <!-- Carte prestataire -->
+        <div class="suivi-presta-card">
+          <div class="sp-avatar">👩🏾</div>
+          <div class="sp-info">
+            <div class="sp-name">Fatima Kaboré</div>
+            <div class="sp-eta">🛵 En route · 8 min · ★★★★★ 4.9</div>
+          </div>
+          <div class="sp-actions">
+            <button class="sp-btn call" title="Appeler">📞</button>
+            <button class="sp-btn msg" title="Message">💬</button>
+          </div>
+        </div>
+
+        <!-- Escrow info -->
+        <div class="escrow-notice">
+          🔒 <strong>Ton argent est sécurisé.</strong> Les 2 500 FCFA sont bloqués chez Dèmè Dèmè et ne seront versés à Fatima qu'après ta validation.
+        </div>
+
+        <!-- Bouton valider (disabled tant que non terminé) -->
+        <button class="btn-validate" id="btnValidate" onclick="validerTache()" style="opacity:.45;cursor:not-allowed;" disabled>
+          ✅ Valider — Tâche terminée
+        </button>
+        <div style="font-size:.68rem;color:var(--gray-500);text-align:center;margin-top:-4px;">
+          Disponible une fois Fatima arrivée et la tâche faite
+        </div>
+        <button class="btn-problem">⚠️ Signaler un problème</button>
+      </div>
+    </div>
+
+    <!-- Navigation bas -->
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="show('accueil')"><span class="nav-icon">🏠</span>Accueil</div>
+      <div class="nav-item active"><span class="nav-icon">📋</span>Mes tâches</div>
+      <div class="nav-item"><span class="nav-icon">🔍</span>Explorer</div>
+      <div class="nav-item"><span class="nav-icon">👤</span>Profil</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 9 — PROFIL & PARAMÈTRES
+  ══════════════════════════════════ -->
+  <div class="screen" id="profil">
+    <!-- Hero -->
+    <div class="profil-hero">
+      <div class="profil-avatar">👩🏾</div>
+      <div class="profil-name">Aminata Ouédraogo</div>
+      <div class="profil-meta">
+        Ouagadougou · Membre depuis juin 2025
+        <span class="profil-badge">✅ Vérifié</span>
+      </div>
+      <div class="profil-stats">
+        <div class="profil-stat"><div class="ps-val">12</div><div class="ps-label">Tâches</div></div>
+        <div class="profil-stat"><div class="ps-val">4.8★</div><div class="ps-label">Note moy.</div></div>
+        <div class="profil-stat"><div class="ps-val">0</div><div class="ps-label">Litiges</div></div>
+      </div>
+    </div>
+
+    <!-- Carte actions rapides -->
+    <div class="profil-card">
+      <div class="pc-item" onclick="show('gains')">
+        <div class="pc-icon" style="background:#D1FAE5;">💰</div>
+        <div class="pc-label">Gains</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-icon" style="background:#DBEAFE;">📋</div>
+        <div class="pc-label">Historique</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-icon" style="background:#FEF3C7;">⭐</div>
+        <div class="pc-label">Mes avis</div>
+      </div>
+      <div class="pc-item">
+        <div class="pc-icon" style="background:#EDE9FE;">🎁</div>
+        <div class="pc-label">Parrainage</div>
+      </div>
+    </div>
+
+    <div class="scroll-y" style="padding-bottom:70px;">
+
+      <!-- Identité -->
+      <div class="profil-section">
+        <div class="profil-section-title">Mon compte</div>
+        <div class="profil-list">
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#DBEAFE;">👤</div>
+            <div class="pr-text">
+              <div class="pr-label">Informations personnelles</div>
+              <div class="pr-sub">Nom, prénom, date de naissance</div>
+            </div>
+            <span class="pr-arrow">›</span>
+          </div>
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#D1FAE5;">🪪</div>
+            <div class="pr-text">
+              <div class="pr-label">Vérification d'identité</div>
+              <div class="pr-sub">CNI / Passeport · Photo</div>
+            </div>
+            <span class="pr-badge verified-badge">Vérifié ✅</span>
+          </div>
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#FEF3C7;">📍</div>
+            <div class="pr-text">
+              <div class="pr-label">Mon adresse</div>
+              <div class="pr-sub">Secteur 15, Ouagadougou</div>
+            </div>
+            <span class="pr-arrow">›</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paiement -->
+      <div class="profil-section">
+        <div class="profil-section-title">Paiement & Portefeuille</div>
+        <div class="profil-list">
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#FEE2E2;">📱</div>
+            <div class="pr-text">
+              <div class="pr-label">Orange Money</div>
+              <div class="pr-sub">+226 70 ••• ••• 42 · Principal</div>
+            </div>
+            <span class="pr-badge verified-badge">Actif</span>
+          </div>
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#EDE9FE;">🅿️</div>
+            <div class="pr-text">
+              <div class="pr-label">PayPal</div>
+              <div class="pr-sub">aminata@gmail.com</div>
+            </div>
+            <span class="pr-badge pending-badge">En attente</span>
+          </div>
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#F0FDF4;">➕</div>
+            <div class="pr-text">
+              <div class="pr-label">Ajouter un moyen de paiement</div>
+              <div class="pr-sub">Wave, Moov, Telecel, Visa…</div>
+            </div>
+            <span class="pr-arrow">›</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="profil-section">
+        <div class="profil-section-title">Notifications</div>
+        <div class="profil-list">
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#FEF3C7;">🔔</div>
+            <div class="pr-text">
+              <div class="pr-label">Notifications push</div>
+              <div class="pr-sub">Nouvelles tâches, messages</div>
+            </div>
+            <div class="pr-toggle" onclick="this.classList.toggle('off')"></div>
+          </div>
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#DBEAFE;">📩</div>
+            <div class="pr-text">
+              <div class="pr-label">Alertes SMS</div>
+              <div class="pr-sub">Confirmation & paiements</div>
+            </div>
+            <div class="pr-toggle" onclick="this.classList.toggle('off')"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sécurité & aide -->
+      <div class="profil-section">
+        <div class="profil-section-title">Sécurité & Aide</div>
+        <div class="profil-list">
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#D1FAE5;">🔒</div>
+            <div class="pr-text">
+              <div class="pr-label">Changer mon mot de passe</div>
+            </div>
+            <span class="pr-arrow">›</span>
+          </div>
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#EDE9FE;">💬</div>
+            <div class="pr-text">
+              <div class="pr-label">Contacter le support</div>
+              <div class="pr-sub">WhatsApp · Chat · Email</div>
+            </div>
+            <span class="pr-arrow">›</span>
+          </div>
+          <div class="profil-row">
+            <div class="pr-icon" style="background:#FEE2E2;">🚪</div>
+            <div class="pr-text">
+              <div class="pr-label" style="color:var(--red);">Se déconnecter</div>
+            </div>
+            <span class="pr-arrow" style="color:var(--red);">›</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;font-size:.65rem;color:var(--gray-400);margin:16px 0;">
+        Dèmè Dèmè v1.0.0 · © 2025 · <span style="color:var(--blue-mid);cursor:pointer;">CGU</span> · <span style="color:var(--blue-mid);cursor:pointer;">Confidentialité</span>
+      </div>
+    </div>
+
+    <!-- Navigation bas -->
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="show('accueil')"><span class="nav-icon">🏠</span>Accueil</div>
+      <div class="nav-item"><span class="nav-icon">📋</span>Mes tâches</div>
+      <div class="nav-item"><span class="nav-icon">🔍</span>Explorer</div>
+      <div class="nav-item active"><span class="nav-icon">👤</span>Profil</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 10 — MESSAGERIE / CHAT
+  ══════════════════════════════════ -->
+  <div class="screen" id="chat">
+    <!-- En-tête -->
+    <div class="chat-header">
+      <button class="back-btn" onclick="show('suivi')" style="margin-bottom:0;flex-shrink:0;">←</button>
+      <div class="chat-avatar">
+        👩🏾
+        <div class="chat-online-dot"></div>
+      </div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">Fatima Kaboré</div>
+        <div class="chat-header-status">● En ligne · prestataire vérifiée ✅</div>
+      </div>
+      <div class="chat-header-actions">
+        <button class="chat-action-btn">📞</button>
+        <button class="chat-action-btn">⋮</button>
+      </div>
+    </div>
+
+    <!-- Bandeau tâche en cours -->
+    <div class="chat-task-banner">
+      <span class="ctb-icon">🧹</span>
+      <span class="ctb-text">Nettoyage maison · Aujourd'hui 15h00</span>
+      <span class="ctb-status">En route 🛵</span>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg-day-divider">Aujourd'hui</div>
+
+      <!-- Message prestataire -->
+      <div class="msg-row">
+        <div class="msg-avatar-sm">👩🏾</div>
+        <div>
+          <div class="msg-bubble theirs">Bonjour ! J'ai bien reçu ta demande de nettoyage. Je serai chez toi à 15h pile 😊</div>
+          <span class="msg-time">14h10</span>
+        </div>
+      </div>
+
+      <!-- Message client -->
+      <div class="msg-row mine">
+        <div>
+          <div class="msg-bubble mine">Parfait Fatima ! Tu as besoin d'un code pour entrer dans la résidence ?</div>
+          <span class="msg-time mine">14h12</span>
+        </div>
+      </div>
+
+      <!-- Prestataire -->
+      <div class="msg-row">
+        <div class="msg-avatar-sm">👩🏾</div>
+        <div>
+          <div class="msg-bubble theirs">Oui s'il te plaît, merci !</div>
+          <span class="msg-time">14h13</span>
+        </div>
+      </div>
+
+      <!-- Client -->
+      <div class="msg-row mine">
+        <div>
+          <div class="msg-bubble mine">Le code c'est 2207. Tu sonnes au portail et le gardien t'ouvre 🙏</div>
+          <span class="msg-time mine">14h14</span>
+        </div>
+      </div>
+
+      <!-- Prestataire -->
+      <div class="msg-row">
+        <div class="msg-avatar-sm">👩🏾</div>
+        <div>
+          <div class="msg-bubble theirs">Noté ! Je suis en route, j'arrive dans environ 8 minutes 🛵💨</div>
+          <span class="msg-time">14h22</span>
+        </div>
+      </div>
+
+      <!-- Message système -->
+      <div style="background:#EDE9FE;border-radius:10px;padding:8px 12px;font-size:.7rem;color:#5B21B6;text-align:center;line-height:1.5;">
+        🔒 <strong>Rappel sécurité Dèmè Dèmè</strong><br>Ne partage jamais ton code de paiement par ce chat.
+      </div>
+    </div>
+
+    <!-- Chips de suggestions rapides -->
+    <div class="chat-suggestions">
+      <div class="suggest-chip" onclick="sendQuick(this)">👍 D'accord</div>
+      <div class="suggest-chip" onclick="sendQuick(this)">⏱️ Prends ton temps</div>
+      <div class="suggest-chip" onclick="sendQuick(this)">✅ Tâche terminée</div>
+      <div class="suggest-chip" onclick="sendQuick(this)">❓ Où es-tu ?</div>
+      <div class="suggest-chip" onclick="sendQuick(this)">🙏 Merci !</div>
+    </div>
+
+    <!-- Barre de saisie -->
+    <div class="chat-input-bar">
+      <button class="chat-action-btn" style="flex-shrink:0;">📎</button>
+      <input class="chat-input" id="chatInput" type="text" placeholder="Écris un message…" onkeydown="if(event.key==='Enter')sendMsg()">
+      <button class="chat-send-btn" onclick="sendMsg()">➤</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       ÉCRAN 11 — NOTIFICATIONS
+  ══════════════════════════════════ -->
+  <div class="screen" id="notifs">
+    <div class="notifs-header">
+      <div style="display:flex;align-items:center;">
+        <button class="back-btn" onclick="show('accueil')" style="margin-bottom:0;margin-right:10px;">←</button>
+        <span class="notifs-title">Notifications <span class="notifs-badge">4</span></span>
+      </div>
+      <span class="notifs-mark-all" onclick="markAllRead()">Tout lire</span>
+    </div>
+
+    <div class="scroll-y" id="notifsScroll">
+
+      <!-- Aujourd'hui -->
+      <div class="notif-group-label">Aujourd'hui</div>
+
+      <div class="notif-item unread" onclick="readNotif(this)">
+        <div class="notif-icon-wrap" style="background:#D1FAE5;">💰</div>
+        <div class="notif-body">
+          <div class="notif-text"><strong>Paiement reçu !</strong> 2 375 FCFA viennent d'être versés sur ton Orange Money pour la tâche "Nettoyage maison".</div>
+          <div class="notif-time">Il y a 5 min</div>
+        </div>
+        <div class="notif-unread-dot"></div>
+      </div>
+
+      <div class="notif-item unread" onclick="readNotif(this)">
+        <div class="notif-icon-wrap" style="background:#DBEAFE;">💬</div>
+        <div class="notif-body">
+          <div class="notif-text"><strong>Fatima Kaboré</strong> t'a envoyé un message : "Je suis en route, j'arrive dans 8 min 🛵"</div>
+          <div class="notif-time">Il y a 12 min</div>
+        </div>
+        <div class="notif-unread-dot"></div>
+      </div>
+
+      <div class="notif-item unread" onclick="readNotif(this)">
+        <div class="notif-icon-wrap" style="background:#FEF3C7;">⭐</div>
+        <div class="notif-body">
+          <div class="notif-text"><strong>Nouvel avis !</strong> Rokia S. t'a laissé une note de <strong>5★</strong> — "Très sérieuse et efficace !"</div>
+          <div class="notif-time">Il y a 1h</div>
+        </div>
+        <div class="notif-unread-dot"></div>
+      </div>
+
+      <div class="notif-item unread" onclick="readNotif(this)">
+        <div class="notif-icon-wrap" style="background:#EDE9FE;">🔔</div>
+        <div class="notif-body">
+          <div class="notif-text"><strong>Nouvelle demande !</strong> Un client cherche une aide ménagère à Ouaga 2000 pour demain matin.</div>
+          <div class="notif-time">Il y a 2h</div>
+        </div>
+        <div class="notif-unread-dot"></div>
+      </div>
+
+      <!-- Hier -->
+      <div class="notif-group-label">Hier</div>
+
+      <div class="notif-item" onclick="readNotif(this)">
+        <div class="notif-icon-wrap" style="background:#D1FAE5;">✅</div>
+        <div class="notif-body">
+          <div class="notif-text"><strong>Tâche validée</strong> par Moussa K. — "Lessive 5 kg" terminée avec succès.</div>
+          <div class="notif-time">Hier · 18h30</div>
+        </div>
+      </div>
+
+      <div class="notif-item" onclick="readNotif(this)">
+        <div class="notif-icon-wrap" style="background:#FEE2E2;">🛡️</div>
+        <div class="notif-body">
+          <div class="notif-text"><strong>Sécurité :</strong> Connexion détectée depuis un nouvel appareil. Si ce n'est pas toi, change ton mot de passe.</div>
+          <div class="notif-time">Hier · 09h15</div>
+        </div>
+      </div>
+
+      <div class="notif-item" onclick="readNotif(this)">
+        <div class="notif-icon-wrap" style="background:#FEF3C7;">🎁</div>
+        <div class="notif-body">
+          <div class="notif-text"><strong>Offre spéciale !</strong> Parraine un ami et gagne <strong>500 FCFA</strong> de bonus dès sa première tâche.</div>
+          <div class="notif-time">Hier · 08h00</div>
+        </div>
+      </div>
+
+      <!-- Il y a 3 jours -->
+      <div class="notif-group-label">Il y a 3 jours</div>
+
+      <div class="notif-item" onclick="readNotif(this)">
+        <div class="notif-icon-wrap" style="background:#D1FAE5;">🪪</div>
+        <div class="notif-body">
+          <div class="notif-text"><strong>Identité vérifiée ✅</strong> Ton profil est maintenant certifié. Tu peux recevoir des tâches.</div>
+          <div class="notif-time">Il y a 3 jours · 14h22</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation bas -->
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="show('accueil')"><span class="nav-icon">🏠</span>Accueil</div>
+      <div class="nav-item"><span class="nav-icon">📋</span>Mes tâches</div>
+      <div class="nav-item active" style="position:relative;">
+        <span class="nav-icon">🔔</span>Notifs
+        <span style="position:absolute;top:4px;right:12px;background:var(--red);color:white;font-size:.5rem;font-weight:800;padding:1px 4px;border-radius:50px;" id="navBadge">4</span>
+      </div>
+      <div class="nav-item" onclick="show('profil')"><span class="nav-icon">👤</span>Profil</div>
+    </div>
+  </div>
+
+</div><!-- /phone -->
+
+<script>
+  // Afficher un écran
+  function show(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    const order = ['splash','inscription','accueil','detail','presta-home','confirmation','gains','suivi','profil','chat','notifs'];
+    document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', i === order.indexOf(id)));
+    // Simulation : débloquer le bouton valider après 3s sur l'écran suivi
+    if (id === 'suivi') {
+      setTimeout(() => {
+        const btn = document.getElementById('btnValidate');
+        if (btn) { btn.style.opacity = '1'; btn.style.cursor = 'pointer'; btn.disabled = false; }
+      }, 3000);
+    }
+  }
+
+  // Validation de tâche → déclenche confirmation et escrow
+  function validerTache() {
+    const btn = document.getElementById('btnValidate');
+    btn.textContent = '⏳ Validation en cours…';
+    btn.disabled = true;
+    btn.style.opacity = '.7';
+    setTimeout(() => {
+      // Mise à jour timeline visuellement
+      document.querySelectorAll('.tl-circle.pending').forEach((c, i) => {
+        if (i < 2) { c.className = 'tl-circle done'; c.textContent = '✓'; }
+      });
+      document.querySelectorAll('.tl-line').forEach(l => l.classList.add('done'));
+      document.querySelectorAll('.tl-content .tl-title').forEach(t => {
+        if (t.style.color) { t.style.color = ''; t.classList.add('done'); }
+      });
+      document.querySelectorAll('.tl-content .tl-time').forEach(t => { t.style.color = ''; });
+      // Mise à jour header
+      document.querySelector('.suivi-status-pill').innerHTML = '<span style="width:8px;height:8px;border-radius:50%;background:#86EFAC;flex-shrink:0;display:inline-block;"></span> Tâche validée · Versement en cours';
+      btn.textContent = '✅ Validé ! Fatima a été payée.';
+      btn.style.opacity = '1';
+      btn.style.background = 'var(--blue-dark)';
+    }, 1500);
+  }
+
+  // Chat — envoi de message
+  function sendMsg() {
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if (!text) return;
+    appendMsg(text, true);
+    input.value = '';
+    // Réponse automatique après 1.2s
+    setTimeout(() => {
+      const replies = ["D'accord, je note 😊", "Merci pour l'info !", "Je vois ça tout de suite 👍", "Ok, j'arrive bientôt 🛵"];
+      appendMsg(replies[Math.floor(Math.random()*replies.length)], false);
+    }, 1200);
+  }
+  function sendQuick(el) {
+    appendMsg(el.textContent, true);
+    setTimeout(() => appendMsg('👍', false), 900);
+  }
+  function appendMsg(text, isMine) {
+    const box = document.getElementById('chatMessages');
+    const now = new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+    const div = document.createElement('div');
+    div.className = 'msg-row' + (isMine ? ' mine' : '');
+    div.innerHTML = isMine
+      ? `<div><div class="msg-bubble mine">${text}</div><span class="msg-time mine">${now}</span></div>`
+      : `<div class="msg-avatar-sm">👩🏾</div><div><div class="msg-bubble theirs">${text}</div><span class="msg-time">${now}</span></div>`;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+  }
+  // Notifications
+  function readNotif(el) {
+    if (!el.classList.contains('unread')) return;
+    el.classList.remove('unread');
+    const dot = el.querySelector('.notif-unread-dot');
+    if (dot) dot.remove();
+    updateNotifBadge();
+  }
+  function markAllRead() {
+    document.querySelectorAll('.notif-item.unread').forEach(el => {
+      el.classList.remove('unread');
+      const dot = el.querySelector('.notif-unread-dot');
+      if (dot) dot.remove();
+    });
+    updateNotifBadge();
+  }
+  function updateNotifBadge() {
+    const count = document.querySelectorAll('.notif-item.unread').length;
+    const badge = document.querySelector('.notifs-badge');
+    const navBadge = document.getElementById('navBadge');
+    if (badge) { badge.textContent = count; badge.style.display = count ? '' : 'none'; }
+    if (navBadge) { navBadge.textContent = count; navBadge.style.display = count ? '' : 'none'; }
+  }
+  function filterGains(el) {
+    el.closest('.gains-filter').querySelectorAll('.gf-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Sélection moyen de paiement
+  function selectPay(el) {
+    el.closest('.pay-grid').querySelectorAll('.pay-method').forEach(m => m.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  // Catégorie active
+  function activateCat(el) {
+    el.closest('.cats').querySelectorAll('.cat-item').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Toggle disponibilité prestataire
+  let statusOn = true;
+  function toggleStatus() {
+    statusOn = !statusOn;
+    const tog = document.getElementById('statusToggle');
+    tog.classList.toggle('off', !statusOn);
+    tog.previousElementSibling.querySelector('small').textContent = statusOn
+      ? 'Les clients peuvent voir ton profil'
+      : 'Tu es invisible pour les clients';
+  }
+
+  // Basculer entre Email et Téléphone
+  function switchMethod(method) {
+    document.getElementById('tab-email').classList.toggle('active', method === 'email');
+    document.getElementById('tab-phone').classList.toggle('active', method === 'phone');
+    document.getElementById('form-email').style.display = method === 'email' ? 'flex' : 'none';
+    document.getElementById('form-phone').style.display = method === 'phone' ? 'flex' : 'none';
+  }
+
+  // Simulation upload document identité
+  function simulateUpload(el, id) {
+    if (el.classList.contains('done')) return;
+    const statusEl = el.querySelector('.id-status');
+    const labelEl = el.querySelector('.id-label');
+    statusEl.textContent = '⏳';
+    setTimeout(() => {
+      el.classList.add('done');
+      statusEl.textContent = '✅';
+      if (id.includes('photo')) labelEl.textContent = 'Photo de profil — Chargée';
+      else if (id.includes('recto')) labelEl.textContent = 'CNI / Passeport Recto — Chargé';
+      else labelEl.textContent = 'CNI / Passeport Verso — Chargé';
+    }, 900);
+  }
+
+  // Système de notation étoiles
+  const starLabels = ['', 'Mauvais 😞', 'Passable 😐', 'Bien 😊', 'Très bien 😄', 'Excellent 🤩'];
+  let currentRating = 0;
+
+  function setRating(n) {
+    currentRating = n;
+    const stars = document.querySelectorAll('#starsInput .star-btn');
+    stars.forEach((s, i) => s.classList.toggle('lit', i < n));
+    document.getElementById('starLabel').textContent = starLabels[n];
+  }
+
+  function submitRating() {
+    if (currentRating === 0) {
+      document.getElementById('starLabel').textContent = '⚠️ Choisis une note d\'abord';
+      document.getElementById('starLabel').style.color = 'var(--red)';
+      return;
+    }
+    const btn = document.querySelector('.rating-form .btn-blue');
+    const success = document.getElementById('ratingSuccess');
+    btn.style.display = 'none';
+    success.style.display = 'block';
+    setTimeout(() => {
+      success.style.display = 'none';
+      btn.style.display = 'block';
+      document.querySelectorAll('#starsInput .star-btn').forEach(s => s.classList.remove('lit'));
+      document.getElementById('starLabel').textContent = 'Appuie sur une étoile pour noter';
+      document.getElementById('starLabel').style.color = '';
+      document.getElementById('ratingComment').value = '';
+      currentRating = 0;
+    }, 3000);
+  }
+</script>
+</body>
+</html>
